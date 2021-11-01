@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS fitness_db;
-CREATE DATABASE fitness_db;
+DROP DATABASE IF EXISTS health_db;
+CREATE DATABASE health_db;
