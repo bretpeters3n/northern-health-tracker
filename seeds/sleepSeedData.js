@@ -1,6 +1,6 @@
 const { Sleep } = require("../models");
 
-const sleepdata = [
+const sleepData = [
   {
     mon_amount: 8,
     tues_amount: 9,
@@ -33,6 +33,6 @@ const sleepdata = [
   },
 ];
 
-const seedSleep = () => Sleep.bulkCreate(sleepdata);
+const seedSleep = () => Sleep.bulkCreate(sleepData);
 
 module.exports = seedSleep;

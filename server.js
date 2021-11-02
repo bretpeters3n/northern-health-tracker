@@ -59,7 +59,7 @@ const routes = require("./controllers");
 const sequelize = require("./config/connection");
 
 // Import the custom helper methods
-const helpers = require("./utils/helpers");
+// const helpers = require("./utils/helpers");
 
 // 'process.env.PORT' was added for production environments
 const PORT = process.env.PORT || 3001;
@@ -82,7 +82,7 @@ const sess = {
 app.use(session(sess));
 
 // Incorporate the custom helper methods
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({});
 
 // get handlebars up and running
 app.engine("handlebars", hbs.engine);

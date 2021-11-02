@@ -1,12 +1,12 @@
 const { User } = require("../models");
 
-const userdata = [
+const userData = [
   {
-    email: "bretpetersen82@gmail.com",
+    email: "bretpetersen@gmail.com",
     password: "p@ssw0rd",
   },
   {
-    email: "bretpetersen82@gmail.com",
+    email: "bretpeterse@gmail.com",
     password: "p@ssw0rd",
   },
   {
@@ -15,6 +15,6 @@ const userdata = [
   },
 ];
 
-const seedUser = () => Gallery.bulkCreate(userdata);
+const seedUser = () => User.bulkCreate(userData);
 
 module.exports = seedUser;

@@ -1,6 +1,6 @@
 const { Water } = require("../models");
 
-const waterdata = [
+const waterData = [
   {
     mon_amount: 8,
     tues_amount: 9,
@@ -33,6 +33,6 @@ const waterdata = [
   },
 ];
 
-const seedWater = () => Gallery.bulkCreate(gallerydata);
+const seedWater = () => Water.bulkCreate(waterData);
 
 module.exports = seedWater;

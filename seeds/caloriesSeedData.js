@@ -1,6 +1,6 @@
 const { Calories } = require("../models");
 
-const caloriesdata = [
+const caloriesData = [
   {
     mon_amount: 8,
     tues_amount: 9,
@@ -33,6 +33,6 @@ const caloriesdata = [
   },
 ];
 
-const seedCalories = () => Calories.bulkCreate(caloriesdata);
+const seedCalories = () => Calories.bulkCreate(caloriesData);
 
 module.exports = seedCalories;

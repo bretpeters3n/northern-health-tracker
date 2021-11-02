@@ -21,6 +21,22 @@ User.hasOne(Exercise, {
   foreignKey: "user_id",
 });
 
+Exercise.belongsTo(User, {
+  foreignKey: "user_id",
+});
+
+Water.belongsTo(User, {
+  foreignKey: "user_id",
+});
+
+Sleep.belongsTo(User, {
+  foreignKey: "user_id",
+});
+
+Calories.belongsTo(User, {
+  foreignKey: "user_id",
+});
+
 // User to User relationships
 // Use Literals from ORM?
 // Can we make the user to user relationship automatically or do we have ot make
