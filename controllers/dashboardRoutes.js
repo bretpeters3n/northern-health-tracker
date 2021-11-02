@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Calories, Exercise, Sleep, Water } = require('../../models');
+const { User, Calories, Exercise, Sleep, Water } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Template Idea
