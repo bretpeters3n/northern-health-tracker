@@ -17,25 +17,6 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-<<<<<<< HEAD
-/* router.get("*", (req, res) => {
-  console.log("asdfasdfasdf");
-  //   try {
-  //     const userData = await User.findAll();
-
-  //     const users = userData.map((project) => project.get({ plain: true }));
-  //     console.log("sadfdsfasdf" + users);
-  //     // res.json(users);
-  //     res.render("homepage", {
-  //       users,
-  //       //   logged_in: req.session.logged_in,
-  //     });
-  //   } catch (err) {
-  //     res.status(500).json(err);
-  //   }
-  res.render("homepage");
-}); */
-=======
 router.get("/profile", async (req, res) => {
   if (req.session.logged_in) {
     const userId = req.session.user_id;
@@ -87,6 +68,5 @@ router.get("/profile", async (req, res) => {
   res.redirect("/login");
   // res.render("profile");
 });
->>>>>>> main
 
 module.exports = router;
