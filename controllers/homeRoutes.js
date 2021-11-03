@@ -14,7 +14,7 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.get("*", (req, res) => {
+/* router.get("*", (req, res) => {
   console.log("asdfasdfasdf");
   //   try {
   //     const userData = await User.findAll();
@@ -30,6 +30,6 @@ router.get("*", (req, res) => {
   //     res.status(500).json(err);
   //   }
   res.render("homepage");
-});
+}); */
 
 module.exports = router;
