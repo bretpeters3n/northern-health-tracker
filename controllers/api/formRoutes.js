@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { Calories, Exercise, Sleep, Water } = require('../models');
+const { Calories, Exercise, Sleep, Water } = require('../../models');
 
-// The `/api` endpoint
+// The `/api/form` endpoint
 
 const entities = [
     {path: "calories", table: Calories},
@@ -30,7 +30,6 @@ for(const entity of entities) {
     });
 
     router.put(`/${entity.path}/:id`, (req, res) => {
-        // update Calories by its `id` value
         entity.table.update(req.body, {
             where: {
                 id: req.params.id
@@ -41,7 +40,6 @@ for(const entity of entities) {
     });
 
     router.delete(`/${entity.path}/:id`, async (req, res) => {
-        // delete Calories by its `id` value
         try {
             const userData = await entity.table.destroy({
                 where: {
