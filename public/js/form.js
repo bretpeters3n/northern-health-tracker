@@ -5,7 +5,7 @@ const newFormHandler = async function (event) {
   event.preventDefault();
 
   const data = {
-    user_id: '<%= Session["VariableName"]%>',
+    /* user_id: '<%= Session["VariableName"]%>', */
     day: document.querySelector('#day').value.trim(),
     calorie: document.querySelector('#calorie').value.trim(),
     exercise: document.querySelector('#exercise').value.trim(),

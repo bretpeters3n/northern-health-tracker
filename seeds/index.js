@@ -1,9 +1,3 @@
-// const { Water, Sleep, Calories, Exercise, User } = require("../models");
-
-/* const seedWater = require("./waterSeedData");
-const seedSleep = require("./sleepSeedData");
-const seedExercise = require("./exerciseSeedData");
-const seedCalories = require("./caloriesSeedData"); */
 const seedUser = require("./userSeedData");
 const seedLogs = require("./logsSeedData");
 
@@ -16,18 +10,6 @@ const seedAll = async () => {
 
   await seedUser();
   console.log("\n----- USERS SEEDED -----\n");
-
-  /* await seedWater();
-  console.log("\n----- WATER SEEDED -----\n");
-
-  await seedSleep();
-  console.log("\n----- SLEEP SEEDED -----\n");
-
-  await seedCalories();
-  console.log("\n----- CALORIES SEEDED -----\n");
-
-  await seedExercise();
-  console.log("\n----- EXERCISE SEEDED -----\n"); */
   
   await seedLogs();
   console.log("\n----- LOGS SEEDED -----\n");
@@ -36,26 +18,3 @@ const seedAll = async () => {
 };
 
 seedAll();
-
-// const seedDatabase = async () => {
-//   await sequelize.sync({ force: true });
-
-//   const drivers = await Driver.bulkCreate(driverSeedData);
-
-//   for (const { id } of drivers) {
-//     const newLicense = await License.create({
-//       driver_id: id,
-//     });
-//   }
-
-//   for (const car of carSeedData) {
-//     const newCar = await Car.create({
-//       ...car,
-//       driver_id: drivers[Math.floor(Math.random() * drivers.length)].id,
-//     });
-//   }
-
-//   process.exit(0);
-// };
-
-// seedDatabase();

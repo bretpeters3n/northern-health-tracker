@@ -5,7 +5,7 @@ const { Logs } = require('../../models');
 
 router.get("/:id", async (req, res) => {
     try {
-        const userData = await Log.findByPk(req.params.id);
+        const userData = await Logs.findByPk(req.params.id);
         res.status(200).json(userData);
     } catch (err) {
         res.status(404).json(err);
