@@ -24,6 +24,8 @@ Contact.init(
       allowNull: true,
       comment: "hours",
     },
+  },
+  {
     sequelize,
     freezeTableName: true,
     underscored: true,
