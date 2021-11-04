@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
 // router.get("/", withAuth, async (req, res) => {
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/profile");
+    res.redirect("/form");
     // res.render("login");
     return;
   }
@@ -53,6 +53,6 @@ router.get("/form", async (req, res) => {
 
   res.render("form", {});
   return;
-})
+});
 
 module.exports = router;

@@ -1,4 +1,4 @@
-let session ='<%= Session["VariableName"]%>';
+let session = '<%= Session["VariableName"]%>';
 /* db.query('SELECT sid FROM sessions') */
 
 const newFormHandler = async function (event) {
@@ -20,14 +20,37 @@ const newFormHandler = async function (event) {
   });
 
   if (response.ok) {
-    window.alert("New Day created!");
-    document.location.replace('/dashboard');
+    window.alert("Day created!");
+    document.location.replace('/form');
   } else {
     alert('Failed to add Day');
   }
 };
 
-const delButtonHandler = async function (event) {
+const updateFormHandler = async function (event) {
+  event.preventDefault();
+
+  if (day && calorie && exercise && sleep && water) {
+    const response = await fetch(`/api/form/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      window.alert('Day updated!');
+      document.location.replace('/form');
+    } else {
+      alert('Failed to update day');
+    }
+  }
+}
+
+const delFormHandler = async function (event) {
+  event.preventDefault();
+
   if (event.target.hasAttribute("data-id")) {
     const id = event.target.getAttribute("data-id");
 
@@ -36,11 +59,14 @@ const delButtonHandler = async function (event) {
     });
 
     if (response.ok) {
-      document.location.replace("/dashboard");
+      window.alert('Day deleted!');
+      document.location.replace("/form");
     } else {
-      alert("Failed to delete project");
+      alert("Failed to delete day");
     }
   }
 };
 
-document.querySelector('.log-form').addEventListener('submit', newFormHandler);
+document.querySelector('#save').addEventListener('click', newFormHandler);
+document.querySelector('#update').addEventListener('click', updateFormHandler);
+document.querySelector('#delete').addEventListener('click', delFormHandler);
