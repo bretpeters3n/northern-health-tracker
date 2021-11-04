@@ -10,7 +10,7 @@ const entities = [
 ];
 
 for(const entity of entities) {
-  router.get(`/${entity.path}/:id`, async (req, res) => {
+  router.get(`/${entity.path}/:id`, withAuth, async (req, res) => {
       try {
           const userData = await entity.table.findByPk(req.params.id);
           res.status(200).json(userData);

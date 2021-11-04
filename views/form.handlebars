@@ -1,28 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href= "../public/css/form.css">
-    <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-    crossorigin="anonymous"
-  />
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-    rel="stylesheet" />
-  
-</head>
-<body>
-    <main class = "d-flex" > 
-  
+<main>
+    <div class="container-lg">
+      <div class="table-responsive">
+        <div class="table-wrapper">
+          <div class="table-title">
+            <div class="row">
+              <div class="col-sm-8"><h2>Track Your Health</h2></div>
+              <div class="col-sm-4">
+                <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+              </div>
+          </div>
+      </div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Calorie Count</th>
+            <th>Exercise</th>
+            <th>Sleep</th>
+            <th>Water</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input class="form-input form-control" type="date" id="day"></td>
+            <td><input class="form-input form-control" type="text" id="calorie"></td>
+            <td><input class="form-input form-control" type="text" id="exercise"></td>
+            <td><input class="form-input form-control" type="text" id="sleep"></td>
+            <td><input class="form-input form-control" type="text" id="water"></td>
+            <td>
+                <a class="add" id="save" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                <a class="edit" id="update" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                <a class="delete" id="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+            </td>
+          </tr>  
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+</main>
+
+    {{!-- <main class = "d-flex" > 
       <form class="log-form">
         <div class="form-group">
           <label for="day">Day:</label>
@@ -50,9 +68,8 @@
           <button class="btn btn-primary" id="delete">Delete</button>
         </div>        
       </form>
+    </main> --}}
 
-    </main>
-
-    <script src="./js/form.js"></script>  
+    <script src="./assets/js/form.js"></script>  
 </body>
 </html>
