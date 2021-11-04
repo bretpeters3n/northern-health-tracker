@@ -1,44 +1,16 @@
 const User = require("./User");
-const Calories = require("./Calories");
-const Sleep = require("./Sleep");
-const Water = require("./Water");
-const Exercise = require("./Exercise");
+const Logs = require("./Logs");
 
 //create associations
-User.hasOne(Calories, {
-  foreignKey: "user_id",
-});
 
-User.hasOne(Sleep, {
+Logs.belongsTo(User, {
   foreignKey: "user_id",
-});
+})
 
-User.hasOne(Water, {
-  foreignKey: "user_id",
-});
 
-User.hasOne(Exercise, {
-  foreignKey: "user_id",
-});
-
-Exercise.belongsTo(User, {
-  foreignKey: "user_id",
-});
-
-Water.belongsTo(User, {
-  foreignKey: "user_id",
-});
-
-Sleep.belongsTo(User, {
-  foreignKey: "user_id",
-});
-
-Calories.belongsTo(User, {
-  foreignKey: "user_id",
-});
 
 // User to User relationships
 // Use Literals from ORM?
 // Can we make the user to user relationship automatically or do we have ot make
 
-module.exports = { User, Calories, Sleep, Water, Exercise };
+module.exports = { User, Logs };

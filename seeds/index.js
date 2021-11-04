@@ -1,10 +1,11 @@
 // const { Water, Sleep, Calories, Exercise, User } = require("../models");
 
-const seedWater = require("./waterSeedData");
+/* const seedWater = require("./waterSeedData");
 const seedSleep = require("./sleepSeedData");
 const seedExercise = require("./exerciseSeedData");
-const seedCalories = require("./caloriesSeedData");
+const seedCalories = require("./caloriesSeedData"); */
 const seedUser = require("./userSeedData");
+const seedLogs = require("./logsSeedData");
 
 const sequelize = require("../config/connection");
 
@@ -16,7 +17,7 @@ const seedAll = async () => {
   await seedUser();
   console.log("\n----- USERS SEEDED -----\n");
 
-  await seedWater();
+  /* await seedWater();
   console.log("\n----- WATER SEEDED -----\n");
 
   await seedSleep();
@@ -26,7 +27,10 @@ const seedAll = async () => {
   console.log("\n----- CALORIES SEEDED -----\n");
 
   await seedExercise();
-  console.log("\n----- EXERCISE SEEDED -----\n");
+  console.log("\n----- EXERCISE SEEDED -----\n"); */
+  
+  await seedLogs();
+  console.log("\n----- LOGS SEEDED -----\n");
 
   process.exit(0);
 };
