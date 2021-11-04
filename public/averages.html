@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="./assets/images/favicon.jpg" type="image/x-icon"/>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Northern Health Tracker</title>
+  </head>
+
+  <body>
+    <aside id="side-bar-out">
+      <div class="side-bar">
+        <div class="logo-section">
+          <div class="logo-name">
+              Northern Health Tracker
+          </div>
+        </div>
+        <div class="menu-section">
+          <ul class="features-list">
+            <div class="category-header">Sign Up</div>
+            <li class="features-item">
+              <i class='bx bxs-log-in navbar-icon'></i>
+              <span class="features-item-title">Signup</span>
+            </li>
+          </ul>
+          <ul class="features-list">
+            <div class="category-header">Main Menu</div>
+            <li class="features-item">
+              <a href="./index.html">
+                <i class='bx bx-home navbar-icon'></i>
+                <span class="features-item-title">Home</span>
+              </a>
+            </li>
+            <li class="features-item">
+              <a href="./averages.html">
+                <i class='bx bxs-dashboard navbar-icon'></i>
+                <span class="features-item-title">Averages</span>
+              </a>
+            </li>
+            <li class="features-item">
+              <a href="./countercalorie.html">
+                <i class='bx bx-health navbar-icon'></i>
+                <span class="features-item-title">Calorie Counter</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="features-list">
+            <div class="category-header">Other Menu</div>
+            <li class="features-item">
+              <a href="./faqs.html">
+                <i class='bx bx-question-mark navbar-icon'></i>
+                <span class="features-item-title">FAQS</span>
+              </a>
+            </li>
+            <li class="features-item">
+              <a href="./about.html">
+                <i class='bx bx-info-circle navbar-icon'></i>
+                <span class="features-item-title">About Us</span>
+              </a>
+            </li>
+            <li class="features-item">
+              <a href="./contact.html">
+                <i class='bx bxs-contact navbar-icon'></i>
+                <span class="features-item-title">Contact Us</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <div class="header-section">
+      <div>Averages</div>
+    </div>
+    <main class="main-container">
+      <section class="boxes d-flex">
+        <div class="box red">
+          <div class='box-title'>Steps</div>
+          <div class="box-value">Value</div>
+          <i class="fas fa-walking"></i>         
+        </div>
+        <div class="box cyan">
+          <div class='box-title'>Water</div>
+          <div class="box-value">Value</div>
+          <i class="fas fa-tint"></i>
+        </div>
+        <div class="box green">
+          <div class='box-title'>Sleep</div>
+          <div class="box-value">Value</div>
+          <i class="fas fa-bed"></i>       
+        </div>
+        <div class="box blue">
+          <div class='box-title'>Calories</div>
+          <div class="box-value">Value</div>
+          <i class="fas fa-heartbeat"></i>
+        </div>
+      </section>
+      <section class="tab-title">
+        <div class='tab-header'>
+          Keep Track Of Your Health
+        </div>
+        <nav class='tab-sections'>
+          <ul>
+            <li class="tabs tab-1">Steps</li>
+            <li class="tabs tab-2">Water</li>
+            <li class="tabs tab-3">Sleep</li>
+            <li class="tabs tab-3">Calorie</li>
+          </ul>
+        </nav>
+        <div class="tab-container">
+          <div class="steps-graph">
+            Steps Graph
+          </div>
+          <div class="water-graph hidden">
+            Water Graph
+          </div>
+          <div class="sleep-graph hidden">
+            Sleep Graph
+          </div>
+          <div class="calorie-graph hidden">
+            Calorie Graph
+          </div>
+        </div>
+      </section>
+    </main>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>
