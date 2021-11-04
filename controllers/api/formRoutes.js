@@ -13,9 +13,15 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+    console.log(req.session);
+    const newLog = {...req.body, 
+    user_id: req.session.user_id,
+    }
+
     try {
-        const userData = await Logs.create(req.body);
-        console.log(userData, req.body);
+        const userData = await Logs.create(newLog);
+        console.log(newLog);
+        /* console.log(userData, req.body); */
         res.status(201).json(userData);
     } catch (err) {
         res.status(500).json(err);
