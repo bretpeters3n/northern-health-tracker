@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Water } = require("../models");
+const { Logs } = require("../models");
 // const withAuth = require("../utils/auth");
 
 router.get("/", (req, res) => {
@@ -22,35 +22,12 @@ router.get("/profile", async (req, res) => {
     const userId = req.session.user_id;
     console.log("This is the signed in users id: " + userId);
 
-    const userData = await User.findOne({
+    const userData = await Logs.findAll({
       where: {
-        id: userId,
+        user_id: userId,
       },
-      attributes: ["id", "email"],
-      include: [
-        {
-          model: Water,
-          attributes: [
-            "id",
-            "mon_amount",
-            "tues_amount",
-            "wed_amount",
-            "thurs_amount",
-            "fri_amount",
-            "sat_amount",
-            "sun_amount",
-            "user_id",
-          ],
-          include: {
-            model: User,
-            attributes: ["id", "email"],
-          },
-        },
-        // {
-        //   model: User,
-        //   attributes: ["id", "email"],
-        // },
-      ],
+        order: [['day', 'DESC']],
+        limit: 3,
     });
 
     // const thisUserData = userData.map((post) => post.get({ plain: true }));
@@ -68,5 +45,14 @@ router.get("/profile", async (req, res) => {
   res.redirect("/login");
   // res.render("profile");
 });
+
+router.get("/form", async (req, res) => {
+  if (!req.session.logged_in) {
+    res.redirect("/login");
+  }
+
+  res.render("form", {});
+  return;
+})
 
 module.exports = router;

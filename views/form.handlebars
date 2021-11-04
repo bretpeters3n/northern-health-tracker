@@ -22,278 +22,35 @@
 </head>
 <body>
     <main class = "d-flex" > 
-    <form action="/my-handling-form-page" method="post">
-    <div class="col-sm-12 col-md-2 col-lg-2 d-flex flex-column">
-        <h1>Monday</h1>
-    
-        <ul style="list-style: none;">
-         <li>
-           <label for="calories">Caloric Intake:</label>
-           <input type="calories" id="caloric_intake" name="user_calories">
-         </li>
-        </ul>
-       
-   
- 
-      
-        <ul style="list-style: none;">
-         <li>
-           <label for="water">Amount of hours slept:</label>
-           <input type="sleep" id="hours_slept" name="user_sleep">
-         </li>
-        </ul>
-       
-   
-
-    
-       
-        <ul style="list-style: none;">
-         <li>
-           <label for="water">Water Intake (in Liters):</label>
-           <input type="water" id="water_intake" name="user_water">
-         </li>
-        </ul>
-      
-    
-       
-        <ul style="list-style: none;">
-         <li>
-           <label for="steps">Amount of steps taken:</label>
-           <input type="steps" id="steps_taken" name="user_steps">
-         </li>
-        </ul>
-    </div>
-
-
-    <div class="col-sm-12 col-md-2 col-lg-2 d-flex flex-column">
-        <h1>Tuesday</h1>
-        <ul style="list-style: none;">
-         <li>
-           <label for="calories">Caloric Intake:</label>
-           <input type="calories" id="caloric_intake" name="user_calories">
-         </li>
-        </ul>
-   
- 
-      
-        <ul style="list-style: none;">
-         <li>
-           <label for="water">Amount of hours slept:</label>
-           <input type="sleep" id="hours_slept" name="user_sleep">
-         </li>
-        </ul>
-   
-
-        <ul style="list-style: none;">
-         <li>
-           <label for="water">Water Intake (in Liters):</label>
-           <input type="water" id="water_intake" name="user_water">
-         </li>
-        </ul>
-     
-    
-        <ul style="list-style: none;">
-         <li>
-           <label for="steps">Amount of steps taken:</label>
-           <input type="steps" id="steps_taken" name="user_steps">
-         </li>
-        </ul>
-    </div>
-
-    <div class="col-sm-12 col-md-2 col-lg-2 d-flex flex-column">
-        <h1>Wednesday</h1>
-        <ul style="list-style: none;">
-         <li>
-           <label for="calories">Caloric Intake:</label>
-           <input type="calories" id="caloric_intake" name="user_calories">
-         </li>
-        </ul>
-     
-   
-
-        <ul style="list-style: none;">
-         <li>
-           <label for="water">Amount of hours slept:</label>
-           <input type="sleep" id="hours_slept" name="user_sleep">
-         </li>
-        </ul>
-   
-
-
-        <ul style="list-style: none;">
-         <li>
-           <label for="water">Water Intake (in Liters):</label>
-           <input type="water" id="water_intake" name="user_water">
-         </li>
-        </ul>
   
-    
-      
-        <ul style="list-style: none;">
-         <li>
-           <label for="steps">Amount of steps taken:</label>
-           <input type="steps" id="steps_taken" name="user_steps">
-         </li>
-        </ul>
-    </div>
+      <form class="log-form">
+        <div class="form-group">
+          <label for="day">Day:</label>
+          <input class="form-input" type="date" id="day">
+        </div>
+        <div class="form-group">
+          <label for="calorie">Calorie Count:</label>
+          <input class="form-input" type="text" id="calorie">
+        </div>
+        <div class="form-group">
+          <label for="exercise">Exercise Minutes:</label>
+          <input class="form-input" type="text" id="exercise">
+        </div>
+        <div class="form-group">
+          <label for="sleep">Sleep Hours:</label>
+          <input class="form-input" type="text" id="sleep">
+        </div>
+        <div class="form-group">
+          <label for="water">Water Glasses:</label>
+          <input class="form-input" type="text" id="water">
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit">Save</button>
+        </div>        
+      </form>
 
-    <div class="col-sm-12 col-md-2 col-lg-2 d-flex flex-column">
-        <h1>Thursday</h1>
-        <ul style="list-style: none;">
-         <li>
-           <label for="calories">Caloric Intake:</label>
-           <input type="calories" id="caloric_intake" name="user_calories">
-         </li>
-        </ul>
-   
- 
-      
-        <ul style="list-style: none;">
-         <li>
-           <label for="water">Amount of hours slept:</label>
-           <input type="sleep" id="hours_slept" name="user_sleep">
-         </li>
-        </ul>
-     
-   
-
-        <ul style="list-style: none;">
-         <li>
-           <label for="water">Water Intake (in Liters):</label>
-           <input type="water" id="water_intake" name="user_water">
-         </li>
-        </ul>
-   
-  
-        <ul style="list-style: none;">
-         <li>
-           <label for="steps">Amount of steps taken:</label>
-           <input type="steps" id="steps_taken" name="user_steps">
-         </li>
-        </ul>
-    </div>
-
-        <div class="col-sm-12 col-md-2 col-lg-2 d-flex flex-column">
-        <h1>Friday</h1>
-        <ul style="list-style: none;">
-         <li>
-           <label for="calories">Caloric Intake:</label>
-           <input type="calories" id="caloric_intake" name="user_calories">
-         </li>
-        </ul>
-   
- 
-
-        <ul style="list-style: none;">
-         <li>
-           <label for="water">Amount of hours slept:</label>
-           <input type="sleep" id="hours_slept" name="user_sleep">
-         </li>
-        </ul>
-      
-   
-
-    
-        <ul style="list-style: none;">
-         <li>
-           <label for="water">Water Intake (in Liters):</label>
-           <input type="water" id="water_intake" name="user_water">
-         </li>
-        </ul>
-    
-    
-    
-        <ul style="list-style: none;">
-         <li>
-           <label for="steps">Amount of steps taken:</label>
-           <input type="steps" id="steps_taken" name="user_steps">
-         </li>
-        </ul>
-    </div>
-    
-    <div class="col-sm-12 col-md-2 col-lg-2 d-flex flex-column">
-        <h1>Saturday</h1>
-        <ul style="list-style: none;">
-         <li>
-           <label for="calories">Caloric Intake:</label>
-           <input type="calories" id="caloric_intake" name="user_calories">
-         </li>
-        </ul>
-   
- 
-        <ul style="list-style: none;">
-         <li>
-           <label for="water">Amount of hours slept:</label>
-           <input type="sleep" id="hours_slept" name="user_sleep">
-         </li>
-        </ul>
-    
-   
-
-    
-        <ul style="list-style: none;">
-         <li>
-           <label for="water">Water Intake (in Liters):</label>
-           <input type="water" id="water_intake" name="user_water">
-         </li>
-        </ul>
-      
-    
-      
-        <ul style="list-style: none;">
-         <li>
-           <label for="steps">Amount of steps taken:</label>
-           <input type="steps" id="steps_taken" name="user_steps">
-         </li>
-        </ul>
-
-    </div>
-
-    <div class="col-sm-12 col-md-2 col-lg-2 d-flex flex-column">
-        <h1>Sunday</h1>
-        <ul style="list-style: none;">
-         <li>
-           <label for="calories">Caloric Intake:</label>
-           <input type="calories" id="caloric_intake" name="user_calories">
-         </li>
-        </ul>
-    
-   
-
-        <ul style="list-style: none;">
-         <li>
-           <label for="water">Amount of hours slept:</label>
-           <input type="sleep" id="hours_slept" name="user_sleep">
-         </li>
-        </ul>
-
-   
-
-    
-       
-        <ul style="list-style: none;">
-         <li>
-           <label for="water">Water Intake (in Liters):</label>
-           <input type="water" id="water_intake" name="user_water">
-         </li>
-        </ul>
-     
-    
-       
-        <ul style="list-style: none;">
-         <li>
-           <label for="steps">Amount of steps taken:</label>
-           <input type="steps" id="steps_taken" name="user_steps">
-         </li>
-         <li class="button">
-            <button type="submit">Submit Info</button>
-         </li>
-        </ul>
-    
-    </div>
-   </form>
     </main>
-    
-</main>   
+
+    <script src="./js/form.js"></script>  
 </body>
 </html>

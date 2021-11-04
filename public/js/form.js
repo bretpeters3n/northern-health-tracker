@@ -1,29 +1,46 @@
+let session ='<%= Session["VariableName"]%>';
+/* db.query('SELECT sid FROM sessions') */
+
 const newFormHandler = async function (event) {
   event.preventDefault();
 
-  const monEl = document.querySelector('#monday');
-  const tuesEl = document.querySelector('#tuesday');
-  const wedEl = document.querySelector('#wednesday');
-  const thursEl = document.querySelector('#thursday');
-  const friEl = document.querySelector('#friday');
-  const satEl = document.querySelector('#saturday');
-  const sunEl = document.querySelector('#sunday');
+  const data = {
+    /* user_id: '<%= Session["VariableName"]%>', */
+    day: document.querySelector('#day').value.trim(),
+    calorie: document.querySelector('#calorie').value.trim(),
+    exercise: document.querySelector('#exercise').value.trim(),
+    sleep: document.querySelector('#sleep').value.trim(),
+    water: document.querySelector('#water').value.trim(),
+  }
 
-  await fetch(`/api/calories`, {
+  const response = await fetch(`/api/form`, {
     method: 'POST',
-    body: JSON.stringify({
-      mon_amount: monEl.value,
-      tues_amount: tuesEl.value,
-      wed_amount: wedEl.value,
-      thurs_amount: thursEl.value,
-      fri_amount: friEl.value,
-      sat_amount: satEl.value,
-      sun_amount: sunEl.value
-    }),
+    body: JSON.stringify(data),
     headers: { 'Content-Type': 'application/json' },
   });
+
+  if (response.ok) {
+    window.alert("New Day created!");
+    document.location.replace('/dashboard');
+  } else {
+    alert('Failed to add Day');
+  }
 };
 
-document
-  .querySelector('#new-fitness-form')
-  .addEventListener('submit', newFormHandler);
+const delButtonHandler = async function (event) {
+  if (event.target.hasAttribute("data-id")) {
+    const id = event.target.getAttribute("data-id");
+
+    const response = await fetch(`/api/form/${id}`, {
+      method: "DELETE",
+    });
+
+    if (response.ok) {
+      document.location.replace("/dashboard");
+    } else {
+      alert("Failed to delete project");
+    }
+  }
+};
+
+document.querySelector('.log-form').addEventListener('submit', newFormHandler);
