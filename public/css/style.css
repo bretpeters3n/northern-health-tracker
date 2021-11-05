@@ -15,63 +15,146 @@ CSS TABLE OF CONTENTS
    v2.0 | 20110126
    License: none (public domain)
 */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 
 body {
-	line-height: 1;
+  line-height: 1;
 }
 
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
 
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 
 /***************************** 2.0 - Global ******************************/
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 
 *,
 *:before,
@@ -105,15 +188,14 @@ a {
 }
 
 a:hover {
-  color:#000000; 
-  text-decoration:none; 
-  cursor:pointer;  
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
 }
-
 
 /****************************** 3.0 - Scroll **************************/
 ::-webkit-scrollbar {
-  width: .6em;
+  width: 0.6em;
   height: 2px;
 }
 
@@ -141,10 +223,9 @@ a:hover {
   background: transparent;
 }
 
-
-/****************************** 4.0 - Navbar **************************/ 
+/****************************** 4.0 - Navbar **************************/
 .side-bar {
-  background-color:rgb(238, 247, 247);
+  background-color: rgb(238, 247, 247);
   position: fixed;
   transition: all 0.5s ease;
   top: 0;
@@ -155,24 +236,28 @@ a:hover {
 }
 
 .logo-section {
-  top:0;
+  top: 0;
   display: flex;
   font-size: 1.1rem;
-  background-image:linear-gradient(to top, rgb(255, 255, 255) , rgb(95, 110, 114));
+  background-image: linear-gradient(
+    to top,
+    rgb(255, 255, 255),
+    rgb(95, 110, 114)
+  );
   border-bottom: 2px solid rgb(0, 0, 0);
   align-items: center;
   white-space: nowrap;
   color: black;
   height: 4.1em;
-  padding: .4em;
+  padding: 0.4em;
   box-shadow: 0px 30px 40px -20px rgba(0, 0, 0, 0.438);
 }
 
 .navbar-icon {
-  color:#ea1d6f;
+  color: #ea1d6f;
   border-radius: 5px;
   border: 1px solid black;
-  padding: .4em;
+  padding: 0.4em;
 }
 
 .user-section {
@@ -181,11 +266,11 @@ a:hover {
 
 .menu-section {
   padding: 1em;
-  position:relative;
+  position: relative;
 }
 
 .features-list {
-  padding: .1em;
+  padding: 0.1em;
   padding-bottom: 1rem;
   list-style: none;
 }
@@ -198,24 +283,24 @@ a:hover {
 }
 
 .features-item:hover {
-  box-shadow: inset 10em 0 0 #ea1d6f;;
+  box-shadow: inset 10em 0 0 #ea1d6f;
 }
 
 .features-item a {
   display: flex;
   align-items: center;
   font-weight: 300;
-  padding: .4em;
+  padding: 0.4em;
 }
 
 .features-item-title {
-  margin-left: .5em;
-  font-size: .9em;
+  margin-left: 0.5em;
+  font-size: 0.9em;
 }
 
 .category-list {
   padding-top: 2.1rem;
-  padding-bottom: 0.9rem;;
+  padding-bottom: 0.9rem;
   list-style: none;
   font-size: 1.2rem;
   font-weight: 500;
@@ -236,41 +321,42 @@ a:hover {
   width: 100%;
   bottom: 0;
   display: flex;
-  background-image:linear-gradient(to bottom, rgb(255, 255, 255) , rgb(95, 110, 114));
+  background-image: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255),
+    rgb(95, 110, 114)
+  );
   border-top: 2px solid rgb(0, 0, 0);
   box-shadow: 0px 30px 40px 20px rgba(0, 0, 0, 0.473);
 }
 
-.sidebar-footer  a {
+.sidebar-footer a {
   flex-grow: 1;
   text-align: center;
   height: 30px;
   line-height: 30px;
   position: relative;
-  color: black
+  color: black;
 }
-
 
 /****************************** 5.0 - Homepage **************************/
 .main-container-home {
   margin: 0em 0em 0em 15em;
-  height:100%;
+  height: 100%;
 }
 
 .home-background {
-  background: url(/images/home-5.jpg) no-repeat  center;
+  background: url(/images/home-5.jpg) no-repeat center;
   background-size: contain;
   height: 100%;
   width: 100%;
   position: absolute;
-  
 }
-
 
 .home-page-title {
   position: absolute;
   display: flex;
-  background:#ea1d6f;
+  background: #ea1d6f;
   height: 6em;
   margin: 15em 0 0 35em;
   color: white;
@@ -279,7 +365,6 @@ a:hover {
   width: 40em;
   border-radius: 15px 0 0 15px;
 }
-
 
 /********************* 6.0 Contact Page **********************/
 .contact-background {
@@ -351,7 +436,6 @@ a:hover {
   color: #666;
 }
 
-
 /**************** 7.0 Dashboard Top ***********/
 .dashboard-header {
   margin: 4em auto 1em;
@@ -365,26 +449,25 @@ a:hover {
   border-radius: 5px;
   box-shadow: 0px 30px 40px -20px rgb(67, 71, 75);
   padding: 30px;
-  margin: 20px; 
-  background: white; 
+  margin: 20px;
+  background: white;
 }
 
 .cyan {
-  border-top: .3em solid rgb(174, 226, 233);
+  border-top: 0.3em solid rgb(174, 226, 233);
 }
 
 .red {
-  border-top: .3em solid rgb(255, 8, 8);
+  border-top: 0.3em solid rgb(255, 8, 8);
 }
 
 .blue {
-  border-top: .3em solid rgb(43, 149, 236);
+  border-top: 0.3em solid rgb(43, 149, 236);
 }
 
 .green {
-  border-top: .3em solid rgb(192, 247, 197);
+  border-top: 0.3em solid rgb(192, 247, 197);
 }
-
 
 /************************** 8.0 Tab **********************/
 .tab-title {
@@ -409,7 +492,7 @@ a:hover {
 
 .tab-sections {
   width: 10%;
-  background-color:rgb(139, 167, 167);
+  background-color: rgb(139, 167, 167);
 }
 
 .tabs {
@@ -417,6 +500,7 @@ a:hover {
 }
 
 .tab-container {
+  width: 90%;
   height: 18em;
 }
 
@@ -428,7 +512,6 @@ a:hover {
   color: #fff;
   box-sizing: border-box;
 }
-
 
 /************************** Login **********************/
 /* div box styling */
@@ -467,10 +550,10 @@ a:hover {
   transition: all 0.5s ease;
 }
 
-.sigin-box, .sigup-box {
+.sigin-box,
+.sigup-box {
   position: absolute;
   width: 50%;
-
 }
 
 /* font & button styling */
@@ -485,7 +568,7 @@ h1 {
 
 .title {
   font-family: "Lora", serif;
-  color: #8E9AAF;
+  color: #8e9aaf;
   font-size: 1.8em;
   line-height: 1.1em;
   letter-spacing: 3px;
@@ -507,7 +590,7 @@ p {
   font-family: "Open Sans", sans-serif;
   font-size: 0.7em;
   letter-spacing: 2px;
-  color: #8E9AAF;
+  color: #8e9aaf;
   text-align: center;
 }
 
@@ -540,7 +623,7 @@ button {
 }
 
 button:hover {
-  background: #EAC7CC;
+  background: #eac7cc;
   color: #f6f6f6;
   transition: background-color 1s ease-out;
 }
@@ -549,7 +632,7 @@ button:hover {
   margin-top: 3%;
   background: #f6f6f6;
   color: #ce7d88;
-  border: solid 1px #EAC7CC;
+  border: solid 1px #eac7cc;
 }
 
 /* form styling */
@@ -579,12 +662,12 @@ form {
 }
 
 .submit:hover {
-  background: #CBC0D3;
+  background: #cbc0d3;
   border-color: #bfb1c9;
 }
 
 input {
-  background: #EAC7CC;
+  background: #eac7cc;
   width: 65%;
   color: #ce7d88;
   border: none;
@@ -627,16 +710,15 @@ label {
   top: 5px;
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   width: 7px;
   background: #ce7d88;
 }
 
-.checkbox input[type=checkbox]:checked + label {
+.checkbox input[type="checkbox"]:checked + label {
   color: #ce7d88;
   transition: 0.5s all ease;
 }
-
 
 /************************** Calorie Counter **********************/
 :root {
@@ -665,7 +747,7 @@ input[type=checkbox] {
 }
 
 .calorie-section {
-  background:white;
+  background: white;
   padding: 2em;
   border: 1px solid black;
   border-radius: 10px;
@@ -684,7 +766,6 @@ input[type=checkbox] {
 
 @media (min-width: 440px) {
   :root {
-
     --line-height: 1.5;
   }
 
@@ -824,7 +905,6 @@ input[type="range"]::-moz-range-thumb {
   margin-top: -8px;
 }
 
-
 /************************** FAQS **********************/
 .faqs-section {
   display: flex;
@@ -880,7 +960,7 @@ input[type="range"]::-moz-range-thumb {
   transition: all 0.6s;
   min-height: 100px;
   max-height: 200px;
-  background-image:linear-gradient(to top, rgb(255, 255, 255) , #d7e2e2);
+  background-image: linear-gradient(to top, rgb(255, 255, 255), #d7e2e2);
 }
 
 summary {
@@ -927,7 +1007,6 @@ summary:after {
   content: "➖";
 }
 
-
 /******************************* 5.0 - About ***************************/
 .about_section_header img {
   height: 100%;
@@ -945,13 +1024,16 @@ summary:after {
   height: 20em;
 }
 
-
 /******************************* 5.0 - Section Titles ***************************/
-.header-section { 
-  background-image:linear-gradient(to top, rgb(255, 255, 255) , rgb(95, 110, 114));
-  border-right: rgb(28, 32, 32) .15em solid;
-  border-left: rgb(21, 26, 25) .15em solid;
-  border-bottom: rgb(24, 34, 33) .10em solid;
+.header-section {
+  background-image: linear-gradient(
+    to top,
+    rgb(255, 255, 255),
+    rgb(95, 110, 114)
+  );
+  border-right: rgb(28, 32, 32) 0.15em solid;
+  border-left: rgb(21, 26, 25) 0.15em solid;
+  border-bottom: rgb(24, 34, 33) 0.1em solid;
   top: 0;
   height: 3em;
   width: auto;
@@ -959,7 +1041,7 @@ summary:after {
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
-  box-shadow:20px 20px 50px grey;  
+  box-shadow: 20px 20px 50px grey;
   color: black;
   font-size: 1.5em;
   text-align: center;
@@ -967,16 +1049,13 @@ summary:after {
   margin-left: 10em;
 }
 
-
-
-
 /******************************* 5.0 - Table ***************************/
 .table-wrapper {
   width: 90%;
   margin: 30px auto;
   background: #fff;
-  padding: 20px;	
-  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  padding: 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .table-title {
   padding-bottom: 10px;
@@ -1002,7 +1081,8 @@ summary:after {
 table.table {
   table-layout: fixed;
 }
-table.table tr th, table.table tr td {
+table.table tr th,
+table.table tr td {
   border-color: #e9e9e9;
 }
 table.table th i {
@@ -1018,15 +1098,15 @@ table.table td a {
   display: inline-block;
   margin: 0 5px;
   min-width: 24px;
-}    
+}
 table.table td a.add {
-  color: #27C46B;
+  color: #27c46b;
 }
 table.table td a.edit {
-  color: #FFC107;
+  color: #ffc107;
 }
 table.table td a.delete {
-  color: #E34724;
+  color: #e34724;
 }
 table.table td i {
   font-size: 19px;
@@ -1036,7 +1116,7 @@ table.table td a.add i {
   margin-right: -1px;
   position: relative;
   top: 3px;
-}    
+}
 table.table .form-control {
   height: 32px;
   line-height: 32px;
@@ -1050,15 +1130,6 @@ table.table td .add {
   display: none;
 }
 
-
-
-
-
-
-
-
-
-
 /******************************* 5.0 - Section Titles ***************************/
 
 @media screen and (max-width: 1000px) {
@@ -1066,166 +1137,163 @@ table.table td .add {
     margin: 0;
   }
 
-.side-bar {
-  width: 100%;
-  height: 10em;
-  border-bottom: 2px solid rgb(0, 0, 0);
-}
+  .side-bar {
+    width: 100%;
+    height: 10em;
+    border-bottom: 2px solid rgb(0, 0, 0);
+  }
 
-.logo-section {
-  font-size: 1rem;
-  height: 3em;
-  padding: .2em;
-  text-align: center;
-}
+  .logo-section {
+    font-size: 1rem;
+    height: 3em;
+    padding: 0.2em;
+    text-align: center;
+  }
 
-.navbar-icon {
-  color:#ea1d6f;
-  border-radius: 5px;
-  border: .5px solid black;
-  padding: .1em;
-}
+  .navbar-icon {
+    color: #ea1d6f;
+    border-radius: 5px;
+    border: 0.5px solid black;
+    padding: 0.1em;
+  }
 
-.menu-section {
-  display: flex;
-  padding: .1em;
-  justify-content: space-evenly;
-}
+  .menu-section {
+    display: flex;
+    padding: 0.1em;
+    justify-content: space-evenly;
+  }
 
-.features-list {
-  padding: 0em;
-  padding-bottom: .1rem;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-
-.features-item {
-  display: flex;
-  align-items: center;
-  position: relative;
-  transition: all 0.5s ease;
-}
-
-.features-item a {
-  font-weight: 100;
-  padding: .1em;
-}
-
-.features-item-title {
-  font-size: .9em;
-}
-
-.category-list {
-  padding-top: 2.1rem;
-  padding-bottom: 0.9rem;;
-  list-style: none;
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
-.category-header {
-  font-size: 1rem;
-  text-transform: uppercase;
-  line-height: 1.8rem;
-  margin: 0;
-  border-bottom: 1px solid #ea1d6f;
-  white-space: nowrap;
-  box-shadow: 0px 30px 40px 20px rgba(77, 76, 76, 0.048);
-}
-
-.sidebar-footer {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  display: flex;
-  background-image:linear-gradient(to bottom, rgb(255, 255, 255) , rgb(95, 110, 114));
-  border-top: 2px solid rgb(0, 0, 0);
-  box-shadow: 0px 30px 40px 20px rgba(0, 0, 0, 0.473);
-}
-
-.sidebar-footer  a {
-  flex-grow: 1;
-  text-align: center;
-  height: 30px;
-  line-height: 30px;
-  position: relative;
-  color: black
-}
-
-/* contact */
-@media screen and (max-width: 520px) {
-  .screen-body {
+  .features-list {
+    padding: 0em;
+    padding-bottom: 0.1rem;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
   }
 
-  .screen-body-item.left {
-    margin-bottom: 30px;
+  .features-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all 0.5s ease;
   }
 
-  .app-title {
-    flex-direction: row;
+  .features-item a {
+    font-weight: 100;
+    padding: 0.1em;
   }
 
-  .app-title span {
-    margin-right: 12px;
+  .features-item-title {
+    font-size: 0.9em;
   }
 
-  .app-title:after {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .screen-body {
-    padding: 40px;
+  .category-list {
+    padding-top: 2.1rem;
+    padding-bottom: 0.9rem;
+    list-style: none;
+    font-size: 1.2rem;
+    font-weight: 500;
   }
 
-  .screen-body-item {
-    padding: 0;
+  .category-header {
+    font-size: 1rem;
+    text-transform: uppercase;
+    line-height: 1.8rem;
+    margin: 0;
+    border-bottom: 1px solid #ea1d6f;
+    white-space: nowrap;
+    box-shadow: 0px 30px 40px 20px rgba(77, 76, 76, 0.048);
   }
-}
 
+  .sidebar-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    background-image: linear-gradient(
+      to bottom,
+      rgb(255, 255, 255),
+      rgb(95, 110, 114)
+    );
+    border-top: 2px solid rgb(0, 0, 0);
+    box-shadow: 0px 30px 40px 20px rgba(0, 0, 0, 0.473);
+  }
 
-/* cards */
-@media (min-width: 950px) {
-  .row1-container {
+  .sidebar-footer a {
+    flex-grow: 1;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    color: black;
+  }
+
+  /* contact */
+  @media screen and (max-width: 520px) {
+    .screen-body {
+      flex-direction: column;
+    }
+
+    .screen-body-item.left {
+      margin-bottom: 30px;
+    }
+
+    .app-title {
+      flex-direction: row;
+    }
+
+    .app-title span {
+      margin-right: 12px;
+    }
+
+    .app-title:after {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .screen-body {
+      padding: 40px;
+    }
+
+    .screen-body-item {
+      padding: 0;
+    }
+  }
+
+  /* cards */
+  @media (min-width: 950px) {
+    .row1-container {
       display: flex;
       justify-content: center;
       align-items: center;
-  }
-  
-  .row2-container {
+    }
+
+    .row2-container {
       display: flex;
       justify-content: center;
       align-items: center;
-  }
-  .box-down {
+    }
+    .box-down {
       position: relative;
       top: 150px;
-  }
-  .box {
+    }
+    .box {
       width: 20%;
-   
-  }
-  .header p {
+    }
+    .header p {
       width: 30%;
+    }
   }
-  
-}
 
-
-  .header-section { 
-  width: 100%;
-  margin-top:6.5em;
-  height: 2em;
-  margin-left:0;
+  .header-section {
+    width: 100%;
+    margin-top: 6.5em;
+    height: 2em;
+    margin-left: 0;
   }
-  body{
+  body {
     overflow: scroll;
   }
-  
-
 }
-
