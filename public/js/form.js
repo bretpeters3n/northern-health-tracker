@@ -1,32 +1,89 @@
-const logs = JSON.parse(document.querySelector("#logs").value);
-console.log(logs);
 $(document).ready(function () {
   $('[data-toggle="tooltip"]').tooltip();
-  var actions = $("table td:last-child").html();
+  //let actions = $("table td:last-child").html();
   // Append table with add row form on add new button click
+ function  generateRow(ids){
+  let tr = document.createElement("tr");
+  
+
+    // append class="material-icons" ???
+
+
+   for(let i=0; i<ids.length; i++){
+   
+    let td = document.createElement("td");
+    let inputEl = document.createElement("input");
+    let divEl = document.createElement("div");
+    inputEl.setAttribute("class", "form-input form-control" );
+    if(i===0){
+      inputEl.setAttribute("type", "date" );
+    }
+    else{
+      inputEl.setAttribute("type", "text" );
+    }
+    inputEl.setAttribute("id", ids[i] );
+    tr.appendChild(td);
+    td.appendChild(inputEl);
+       
+    
+   }
+   let td = document.createElement("td");
+   let addEl = document.createElement("a");
+   let iconEl = document.createElement("i");
+   iconEl.innerText = '>&#xE03B;';
+   addEl.appendChild(iconEl);
+   td.appendChild(addEl);
+   tr.appendChild(td);
+   addEl.addEventListener('click', newFormHandler);
+   document.querySelector('tbody').appendChild(tr);
+ } 
   $(".add-new").click(function () {
     $(this).attr("disabled", "disabled");
-    var index = $("table tbody tr:last-child").index();
-    var row = '<tr>' +
-      '<td><input class="form-input form-control" type="date" id="day"></td>' +
-      '<td><input class="form-input form-control" type="text" id="calorie"></td>' +
-      '<td><input class="form-input form-control" type="text" id="exercise"></td>' +
-      '<td><input class="form-input form-control" type="text" id="sleep"></td>' +
-      '<td><input class="form-input form-control" type="text" id="water"></td>' +
-      '<td>' + actions + '</td>' +
-      '</tr>';
-    $("table").append(row);
-    $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
+    let index = $("table tbody tr:last-child").index();
+    // let row = '<tr>' +
+    //   '<td><input class="form-input form-control" type="date" id="day"></td>' +
+    //   '<td><input class="form-input form-control" type="text" id="calorie"></td>' +
+    //   '<td><input class="form-input form-control" type="text" id="exercise"></td>' +
+    //   '<td><input class="form-input form-control" type="text" id="sleep"></td>' +
+    //   '<td><input class="form-input form-control" type="text" id="water"></td>' +
+    //   '<td>'+ '</td>' +
+    //   '</tr>';
+
+    
+    let idArray = ['day', 'calorie',' exercise', 'sleep', 'water'];
+   generateRow(idArray);
+
+
+
+   // $("table").append(row);
+  // console.log( $("table tbody tr").eq(index + 1).find(".add, .edit").toggle());
     $('[data-toggle="tooltip"]').tooltip();
 
-    document.querySelector('#save').addEventListener('click', newFormHandler);
-    document.querySelector('#update').addEventListener('click', updateFormHandler);
-    document.querySelector('#delete').addEventListener('click', delFormHandler);
+    // let add = `<a class="add" id="save" title="Add" data-toggle="tooltip"></a>`;
+    // let addEl = document.createElement("a");
+    // let iconEl = document.createElement("i");
+    // iconEl.innerText = '>&#xE03B;' 
+    // addEl.appendChild(iconEl);
+    // addEl.addEventListener('click', newFormHandler);
+    //console.log(row);
+   // row.lastChild.appendChild(addEl);
+    
+
+
+
+    // let edit = `<a class="edit" id="update" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>`;
+    // let del = `<a class="delete" id="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>`;
+
+    
+    // edit.addEventListener('click', updateFormHandler);
+    // del.addEventListener('click', delFormHandler);
+
+    
   });
   // Add row on add button click
   $(document).on("click", ".add", function () {
-    var empty = false;
-    var input = $(this).parents("tr").find('input[type="text"]');
+    let empty = false;
+    let input = $(this).parents("tr").find('input[type="text"]');
     input.each(function () {
       if (!$(this).val()) {
         $(this).addClass("error");
@@ -59,16 +116,11 @@ $(document).ready(function () {
   });
 });
 
-
-let session = '<%= Session["VariableName"]%>';
-/* db.query('SELECT sid FROM sessions') */
-
 const newFormHandler = async (event) => {
   event.preventDefault();
   console.log("BUTTON PRESSED")
 
   const data = {
-    /* user_id: '<%= Session["VariableName"]%>', */
     day: document.querySelector('#day').value.trim(),
     calorie: document.querySelector('#calorie').value.trim(),
     exercise: document.querySelector('#exercise').value.trim(),
@@ -92,7 +144,15 @@ const newFormHandler = async (event) => {
 
 const updateFormHandler = async function (event) {
   event.preventDefault();
-  console.log("UPDAE PRESSED")
+  console.log("UPDATE PRESSED")
+
+  const data = {
+    day: document.querySelector('#day').value.trim(),
+    calorie: document.querySelector('#calorie').value.trim(),
+    exercise: document.querySelector('#exercise').value.trim(),
+    sleep: document.querySelector('#sleep').value.trim(),
+    water: document.querySelector('#water').value.trim(),
+  }
 
   if (day && calorie && exercise && sleep && water) {
     const response = await fetch(`/api/form/${id}`, {
@@ -132,6 +192,6 @@ const delFormHandler = async function (event) {
   }
 };
 
-document.querySelector('#save').addEventListener('click', newFormHandler);
-document.querySelector('#update').addEventListener('click', updateFormHandler);
-document.querySelector('#delete').addEventListener('click', delFormHandler);
+document.querySelector('.add').addEventListener('click', newFormHandler);
+document.querySelector('.edit').addEventListener('click', updateFormHandler);
+document.querySelector('.delete').addEventListener('click', delFormHandler);
