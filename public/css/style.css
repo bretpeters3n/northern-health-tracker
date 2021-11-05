@@ -253,13 +253,12 @@ a:hover {
 
 /****************************** 5.0 - Homepage **************************/
 .main-container-home {
-  margin: 0em 0em 0em 15em;
   height:100%;
 }
 
 .home-background {
   background: url(/images/home-5.jpg) no-repeat  center;
-  background-size: contain;
+  background-size: cover;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -278,6 +277,7 @@ a:hover {
   padding: 2em;
   width: 40em;
   border-radius: 15px 0 0 15px;
+  right: 0;
 }
 
 
@@ -1229,3 +1229,6 @@ table.table td .add {
 
 }
 
+.login-section-wrapper {
+  margin-top: 1em;
+}
