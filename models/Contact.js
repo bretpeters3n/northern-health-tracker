@@ -20,9 +20,8 @@ Contact.init(
         },
       },
     message: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
-      comment: "hours",
     },
   },
   {

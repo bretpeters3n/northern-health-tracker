@@ -42,8 +42,7 @@ A Fitness Tracker project is a application that allows that user to track their 
 
 
 ## Preview
-![Preview](./assets/images/screenshot.png)
-![Preview](./assets/images/demo.gif)
+![Preview](/images/screenshot.png)
 
 
 ## Features

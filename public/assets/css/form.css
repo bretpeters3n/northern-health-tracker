@@ -1,8 +1,0 @@
-.d-flex { 
-    background-color: antiquewhite;
-}
-
-@media screen and (max-width: 768px) {
-    main,
-    .product {
-      flex-direction: column;}}
