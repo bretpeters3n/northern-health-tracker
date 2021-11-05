@@ -253,13 +253,12 @@ a:hover {
 
 /****************************** 5.0 - Homepage **************************/
 .main-container-home {
-  margin: 0em 0em 0em 15em;
   height:100%;
 }
 
 .home-background {
   background: url(/images/home-5.jpg) no-repeat  center;
-  background-size: contain;
+  background-size: cover;
   height: 100%;
   width: 100%;
   position: absolute;
