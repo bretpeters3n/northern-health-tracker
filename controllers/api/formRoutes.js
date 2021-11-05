@@ -29,7 +29,12 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-    Logs.update(req.body, {
+    console.log(req.params.id);
+    const updatedLog = {...req.body, 
+        user_id: req.session.user_id,
+        }
+
+    Logs.update(updatedLog, {
         where: {
             id: req.params.id
         }
