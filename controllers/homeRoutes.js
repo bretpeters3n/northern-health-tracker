@@ -1,9 +1,9 @@
 const router = require("express").Router();
 const { Logs } = require("../models");
-// const withAuth = require("../utils/auth");
+const withAuth = require("../utils/auth");
 
 router.get("/", (req, res) => {
-  res.render("homepage");
+  res.render("homepage", { logged_in: req.session.logged_in });
 });
 
 // router.get("/", withAuth, async (req, res) => {
@@ -17,6 +17,38 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+router.get("/countercalorie", (req, res) => {
+  res.render("caloriecounter", { logged_in: req.session.logged_in });
+});
+
+router.get("/form", withAuth, async (req, res) => {
+  try {
+    const logsData = await Logs.findAll();
+    const aa = logsData.map((v) => v.get({ plain: true }));
+
+    res.render("form", { logged_in: req.session.logged_in, logs: aa });
+  } catch (e) {
+    console.log(e)
+  }
+});
+
+
+router.get("/faqs", (req, res) => {
+  res.render("faqspage", { logged_in: req.session.logged_in });
+});
+
+router.get("/about", (req, res) => {
+  res.render("about", { logged_in: req.session.logged_in });
+});
+
+router.get("/averages", (req, res) => {
+  res.render("averages", { logged_in: req.session.logged_in });
+});
+
+router.get("/contact", (req, res) => {
+  res.render("contactpage", { logged_in: req.session.logged_in });
+});
+
 router.get("/profile", async (req, res) => {
   if (req.session.logged_in) {
     const userId = req.session.user_id;
@@ -26,8 +58,8 @@ router.get("/profile", async (req, res) => {
       where: {
         user_id: userId,
       },
-        order: [['day', 'DESC']],
-        limit: 3,
+      order: [['day', 'DESC']],
+      limit: 3,
     });
 
     // const thisUserData = userData.map((post) => post.get({ plain: true }));

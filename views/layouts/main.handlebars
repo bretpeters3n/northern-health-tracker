@@ -6,13 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="icon" href="./assets/images/favicon.jpg" type="image/x-icon"/>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="icon" href="/images/favicon.jpg" type="image/x-icon"/>
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -20,9 +18,7 @@
   </head>
 
   <body>
-    <aside>
       {{#if logged_in}}  
-      <aside id="side-bar-login">
         <div class="side-bar">
           <div class="logo-section">
             <div class="logo-name">
@@ -35,7 +31,7 @@
                 Sophia
               </div>
               <div class="user-email">
-                soph@example.com
+                <h4><a href="/Users/{{Users.id}}">{{Users.name}}</a></h4>
               </div>
             </div>
           </div>
@@ -43,19 +39,19 @@
             <ul class="features-list">
               <div class="category-header">Main Menu</div>
               <li class="features-item">
-                <a href="./index.html">
+                <a href="/">
                   <i class='bx bx-home navbar-icon'></i>
                   <span class="features-item-title">Home</span>
                 </a>
               </li>
               <li class="features-item">
-                <a href="./dashboard.html">
+                <a href="/profile">
                   <i class='bx bxs-dashboard navbar-icon'></i>
                   <span class="features-item-title">Dashboard</span>
                 </a>
               </li>
               <li class="features-item">
-                <a href="./countercalorie.html">
+                <a href="/countercalorie">
                   <i class='bx bx-health navbar-icon'></i>
                   <span class="features-item-title">Calorie Counter</span>
                 </a>
@@ -64,37 +60,35 @@
             <ul class="features-list">
               <div class="category-header">Other Menu</div>
               <li class="features-item">
-                <a href="./faqs.html">
+                <a href="/faqs">
                   <i class='bx bx-question-mark navbar-icon'></i>
                   <span class="features-item-title">FAQS</span>
                 </a>
               </li>
               <li class="features-item">
-                <a href="./about.html">
+                <a href="/about">
                   <i class='bx bx-info-circle navbar-icon'></i>
                   <span class="features-item-title">About Us</span>
                 </a>
               </li>
               <li class="features-item">
-                <a href="./contact.html">
+                <a href="/contact">
                   <i class='bx bxs-contact navbar-icon'></i>
                   <span class="features-item-title">Contact Us</span>
                 </a>
               </li>
             </ul>
           </div>
-          <div class="sidebar-footer">
-            <a class='navbar-link' href="#">
+          <div class="sidebar-footer" id="logout">
+            <a class='navbar-link' href="/">
               <span class="features-item-title">Log Out</span>
               <i class='bx bx-power-off'></i>
             </a>
           </div>
-        </div>
-      </aside>
+      </div>
       <script src="/js/logout.js"></script>
       {{else}}
-      <aside id="side-bar-out">
-        <div class="side-bar hidden">
+        <div class="side-bar">
           <div class="logo-section">
             <div class="logo-name">
                 Northern Health Tracker
@@ -104,26 +98,28 @@
             <ul class="features-list">
               <div class="category-header">Sign Up</div>
               <li class="features-item">
+                <a href="/login">
                 <i class='bx bxs-log-in navbar-icon'></i>
                 <span class="features-item-title">Signup</span>
+                </a>
               </li>
             </ul>
             <ul class="features-list">
               <div class="category-header">Main Menu</div>
               <li class="features-item">
-                <a href="./index.html">
+                <a href="/">
                   <i class='bx bx-home navbar-icon'></i>
                   <span class="features-item-title">Home</span>
                 </a>
               </li>
               <li class="features-item">
-                <a href="./averages.html">
+                <a href="/averages">
                   <i class='bx bxs-dashboard navbar-icon'></i>
                   <span class="features-item-title">Averages</span>
                 </a>
               </li>
               <li class="features-item">
-                <a href="./countercalorie.html">
+                <a href="/countercalorie">
                   <i class='bx bx-health navbar-icon'></i>
                   <span class="features-item-title">Calorie Counter</span>
                 </a>
@@ -132,36 +128,34 @@
             <ul class="features-list">
               <div class="category-header">Other Menu</div>
               <li class="features-item">
-                <a href="./faqs.html">
+                <a href="/faqs">
                   <i class='bx bx-question-mark navbar-icon'></i>
                   <span class="features-item-title">FAQS</span>
                 </a>
               </li>
               <li class="features-item">
-                <a href="./about.html">
+                <a href="/about">
                   <i class='bx bx-info-circle navbar-icon'></i>
                   <span class="features-item-title">About Us</span>
                 </a>
               </li>
               <li class="features-item">
-                <a href="./contact.html">
+                <a href="/contact">
                   <i class='bx bxs-contact navbar-icon'></i>
                   <span class="features-item-title">Contact Us</span>
                 </a>
               </li>
             </ul>
           </div>
-        </div>
-      </aside>
+      </div>
       {{/if}}
 
-    <main>
       {{{body}}}
-    </main>
 
-    <script src="assets/js/form.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>  
   </body>
 </html>
+
+<script src="/js/script.js"></script>

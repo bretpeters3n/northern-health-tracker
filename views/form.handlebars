@@ -1,75 +1,48 @@
-<main>
-    <div class="container-lg">
-      <div class="table-responsive">
-        <div class="table-wrapper">
-          <div class="table-title">
-            <div class="row">
-              <div class="col-sm-8"><h2>Track Your Health</h2></div>
-              <div class="col-sm-4">
-                <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+<section class="header-section">
+  <div>Calorie Counter</div>
+</section>
+<section class="main-container">
+      <div class="container-lg">
+        <div class="table-responsive">
+          <div class="table-wrapper">
+            <div class="table-title">
+              <div class="row">
+                <div class="col-sm-8"><h2>Track Your Health</h2></div>
+                  <div class="col-sm-4">
+                    <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+                  </div>
               </div>
+            </div>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Calorie Count</th>
+                <th>Exercise</th>
+                <th>Sleep</th>
+                <th>Water</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input class="form-input form-control" type="date" id="day"></td>
+                <td><input class="form-input form-control" type="text" id="calorie"></td>
+                <td><input class="form-input form-control" type="text" id="exercise"></td>
+                <td><input class="form-input form-control" type="text" id="sleep"></td>
+                <td><input class="form-input form-control" type="text" id="water"></td>
+                <td>
+                    <a class="add" id="save" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                    <a class="edit" id="update" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                    <a class="delete" id="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                </td>
+              </tr>  
+            </tbody>
+            </table>
           </div>
+        </div>
       </div>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>Day</th>
-            <th>Calorie Count</th>
-            <th>Exercise</th>
-            <th>Sleep</th>
-            <th>Water</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><input class="form-input form-control" type="date" id="day"></td>
-            <td><input class="form-input form-control" type="text" id="calorie"></td>
-            <td><input class="form-input form-control" type="text" id="exercise"></td>
-            <td><input class="form-input form-control" type="text" id="sleep"></td>
-            <td><input class="form-input form-control" type="text" id="water"></td>
-            <td>
-                <a class="add" id="save" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                <a class="edit" id="update" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                <a class="delete" id="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-            </td>
-          </tr>  
-        </tbody>
-      </table>
-    </div>
-  </div>
-  </div>
-</main>
-
-    {{!-- <main class = "d-flex" > 
-      <form class="log-form">
-        <div class="form-group">
-          <label for="day">Day:</label>
-          <input class="form-input" type="date" id="day">
-        </div>
-        <div class="form-group">
-          <label for="calorie">Calorie Count:</label>
-          <input class="form-input" type="text" id="calorie">
-        </div>
-        <div class="form-group">
-          <label for="exercise">Exercise Minutes:</label>
-          <input class="form-input" type="text" id="exercise">
-        </div>
-        <div class="form-group">
-          <label for="sleep">Sleep Hours:</label>
-          <input class="form-input" type="text" id="sleep">
-        </div>
-        <div class="form-group">
-          <label for="water">Water Glasses:</label>
-          <input class="form-input" type="text" id="water">
-        </div>
-        <div class="form-group">
-          <button class="btn btn-primary" id="save">Save</button>
-          <button class="btn btn-primary" id="update">Update</button>
-          <button class="btn btn-primary" id="delete">Delete</button>
-        </div>        
-      </form>
-    </main> --}}
-
-    <script src="./assets/js/form.js"></script>  
-</body>
+    </section>
+    <input type="text" id="logs" value="{{logs}}" hidden>
+      <script src="/js/form.js"></script> 
+  </body>
 </html>

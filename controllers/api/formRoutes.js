@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Logs } = require('../../models');
 
-// The `/api/form` endpoint
+
 
 router.get("/:id", async (req, res) => {
     try {
@@ -13,7 +13,7 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-    console.log(req.session);
+    console.log("ASJDIASJDIOSAJDIOPASJIDOPAJSIOD",req.body);
     const newLog = {...req.body, 
     user_id: req.session.user_id,
     }
