@@ -1,39 +1,107 @@
 <div class="header-section">
-  <div>Dashboard</div>
+      <div>Dashboard</div>
+    </div>
+    <main class="main-container">
+      <section class="dashboard-header">
+        <button>
+          Add Your Weekly Data   
+        </button>
+      </section>
+      <section class="tab-title">
+        <div class='tab-header'>
+          Keep Track Of Your Health
+        </div>
+
+        <div class="d-flex">
+          <nav class='tab-sections'>
+            <ul>
+              <li class="tabs tab-1">Steps</li>
+              <li class="tabs tab-2">Water</li>
+              <li class="tabs tab-3">Sleep</li>
+              <li class="tabs tab-3">Calorie</li>
+            </ul>
+          </nav>
+          <div class="tab-container" >
+            <div class="calorie-graph">
+              Calories Graph
+
+{{!-- -------------chart.js-------------- --}}
+<div style="margin: auto; height:375px; width:400px">
+        <canvas id="myChart" width="600" height="385"></canvas>
 </div>
-<main class="main-container">
-  <section class="dashboard-header">
-    <button>
-      <a href="/form">
-      Add Your Weekly Data 
-      </a>  
-    </button>
-  </section>
-  <section class="tab-title">
-    <div class='tab-header'>
-      Keep Track Of Your Health
-    </div>
-    <nav class='tab-sections'>
-      <ul>
-        <li class="tabs tab-1">Steps</li>
-        <li class="tabs tab-2">Water</li>
-        <li class="tabs tab-3">Sleep</li>
-        <li class="tabs tab-3">Calorie</li>
-      </ul>
-    </nav>
-    <div class="tab-container">
-      <div class="steps-graph">
-        Steps Graph
+{{weeklyCalorieAvgs.allUserCalories}}
+{{weeklyCalorieAvgs.thisUserCalories}}
+<script>
+const ctx = document.getElementById('myChart');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Average Daily Calories'],
+        datasets: [
+            {
+                label: 'You',
+                data: [1500],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            },
+            {
+                label: 'Everone',
+                data: [2000],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            },
+        ]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+            display: true,
+            ticks: {
+                suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                suggestedMax: 3000,    // minimum will be 0, unless there is a lower value.
+                // OR //
+                beginAtZero: true   // minimum value will be 0.
+            }
+        }]
+        }
+    }
+});
+</script>
+{{!-- -------------chart.js-------------- --}}
+
       </div>
-      <div class="water-graph hidden">
-        Water Graph
-      </div>
-      <div class="sleep-graph hidden">
-        Sleep Graph
-      </div>
-      <div class="calorie-graph hidden">
-        Calorie Graph
-      </div>
-    </div>
-  </section>
-</main>
+          <div class="water-graph hidden">
+            Water Graph
+          </div>
+          <div class="sleep-graph hidden">
+            Sleep Graph
+          </div>
+          <div class="steps-graph hidden">
+            Steps Graph
+          </div>
+        </div>
+        </div>
+      </section>
+    </main>
