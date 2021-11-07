@@ -6,24 +6,22 @@ router.get("/", (req, res) => {
   res.render("homepage", { logged_in: req.session.logged_in });
 });
 
-// router.get("/", withAuth, async (req, res) => {
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/form");
-    // res.render("login");
     return;
   }
 
   res.render("login");
 });
 
-router.get("/countercalorie", (req, res) => {
-  res.render("caloriecounter", { logged_in: req.session.logged_in });
-});
-
 router.get("/form", withAuth, async (req, res) => {
   try {
-    const logsData = await Logs.findAll();
+    const logsData = await Logs.findAll({
+      where: {
+        user_id: req.session.user_id,
+      }
+    });
     const aa = logsData.map((v) => v.get({ plain: true }));
 
     res.render("form", { logged_in: req.session.logged_in, logs: aa });
@@ -31,7 +29,6 @@ router.get("/form", withAuth, async (req, res) => {
     console.log(e)
   }
 });
-
 
 router.get("/faqs", (req, res) => {
   res.render("faqspage", { logged_in: req.session.logged_in });

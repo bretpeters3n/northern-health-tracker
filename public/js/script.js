@@ -21,13 +21,6 @@ function tabThree() {
   $('.calorie-graph').addClass('hidden');
 }
 
-function tabThree() {
-  $('.steps-graph').addClass('hidden');
-  $('.water-graph').addClass('hidden');
-  $('.sleep-graph').removeClass('hidden');
-  $('.calorie-graph').addClass('hidden');
-}
-
 function tabFour() {
   $('.steps-graph').addClass('hidden');
   $('.water-graph').addClass('hidden');
