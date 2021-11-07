@@ -1,130 +1,175 @@
 $(document).ready(function () {
-  /* $('[data-toggle="tooltip"]').tooltip(); */
-  //let actions = $("table td:last-child").html();
-  // Append table with add row form on add new button click
- function  generateRow(ids){
-  let tr = document.createElement("tr");
-  
+  const
+    $tbody = $("tbody"),
+    $inputs = $tbody.find("input").closest("tr"),
+    $day = $inputs.find("#day"),
+    $calorie = $inputs.find("#calorie"),
+    $exercise = $inputs.find("#exercise"),
+    $sleep = $inputs.find("#sleep"),
+    $water = $inputs.find("#water");
 
-    // append class="material-icons" ???
+  function isoDate(date) {
+    return (new Date(date)).toISOString().substring(0, 10);
+  }
 
+  function insert(data) {
+    const row = `
+  <tr>
+    <td>${data.day}</td>
+    <td>${data.calorie}</td>
+    <td>${data.exercise}</td>
+    <td>${data.sleep}</td>
+    <td>${data.water}</td>
+    <td>
+      <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+      <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+    </td>
+  </tr>`;
 
-   for(let i=0; i<ids.length; i++){
-   
-    let td = document.createElement("td");
-    let inputEl = document.createElement("input");
-    inputEl.setAttribute("class", "form-input form-control" );
-    if(i===0){
-      inputEl.setAttribute("type", "date" );
+    $("tbody > tr:not(:last)").each(function () {
+      if (data.day < $(this).children().first().text()) {
+        $(this).before(row);
+        return;
+      }
+    })
+
+    $("tbody > tr:last").before(row);
+  }
+
+  function reset() {
+    const last = $tbody.find("tr:last-child");
+
+    if (last.index() != $inputs.index()) {
+      last.after($inputs);
     }
-    else{
-      inputEl.setAttribute("type", "text" );
+
+    $day.val("");
+    $calorie.val("");
+    $exercise.val("");
+    $sleep.val("");
+    $water.val("");
+
+    $day.focus();
+    $inputs.removeData("original");
+  }
+
+  async function add(data) {
+    const res = await fetch(`/api/form`, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {"Content-Type": "application/json"}
+    });
+
+    if (!res.ok) {
+      throw new Error(`Failed to add day {status: ${res.status}, text: "${res.statusText}"`);
     }
-    inputEl.setAttribute("id", ids[i] );
-    tr.appendChild(td);
-    td.appendChild(inputEl);
-       
-    
-   }
-   let td = document.createElement("td");
-   let addEl = document.createElement("a");
-   let iconEl = document.createElement("i");
-   addEl.setAttribute("class", "add")
-   addEl.setAttribute("id", "save")
-   iconEl.innerText = 'edit';
-   iconEl.setAttribute("class", "material-icons-outlined")
-   addEl.appendChild(iconEl);
-   td.appendChild(addEl);
-   tr.appendChild(td);
-   addEl.addEventListener('click', newFormHandler);
-   document.querySelector('tbody').appendChild(tr);
- } 
-  $(".add-new").click(function () {
- 
-    let idArray = ['day', 'calorie',' exercise', 'sleep', 'water'];
-   generateRow(idArray);
-  });
-
-
-
-const newFormHandler = async (event) => {
-  event.preventDefault();
-  console.log("BUTTON PRESSED")
-
-  const data = {
-    day: document.querySelector('#day').value.trim(),
-    calorie: document.querySelector('#calorie').value.trim(),
-    exercise: document.querySelector('#exercise').value.trim(),
-    sleep: document.querySelector('#sleep').value.trim(),
-    water: document.querySelector('#water').value.trim(),
   }
 
-  const response = await fetch(`/api/form`, {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: { 'Content-Type': 'application/json' },
-  });
-
-  if (response.ok) {
-    window.alert("Day created!");
-    document.location.replace('/form');
-  } else {
-    alert('Failed to add Day');
-  }
-};
-
-const updateFormHandler = async function (event) {
-  event.preventDefault();
-  console.log("UPDATE PRESSED")
-
-  const data = {
-    day: document.querySelector('#day').value.trim(),
-    calorie: document.querySelector('#calorie').value.trim(),
-    exercise: document.querySelector('#exercise').value.trim(),
-    sleep: document.querySelector('#sleep').value.trim(),
-    water: document.querySelector('#water').value.trim(),
-  }
-
-  if (day && calorie && exercise && sleep && water) {
-    const response = await fetch(`/api/form/${id}`, {
-      method: 'PUT',
+  async function update(data) {
+    const res = await fetch(`/api/form/${isoDate($day.val())}`, {
+      method: "PUT",
       body: JSON.stringify(data),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-    });
+    })
 
-    if (response.ok) {
-      window.alert('Day updated!');
-      document.location.replace('/form');
-    } else {
-      alert('Failed to update day');
+    if (!res.ok) {
+      throw new Error(`Failed to update day {status: ${res.status}, text: "${res.statusText}"`);
     }
   }
-}
 
-const delFormHandler = async function (event) {
-  event.preventDefault();
-  console.log("DELETE PRESSED")
+  async function del($tr) {
+    const date = isoDate($tr.children().first().text());
+    const res = await fetch(`/api/form/${date}`, { method: "DELETE" });
 
-  if (event.target.hasAttribute("data-id")) {
-    const id = event.target.getAttribute("data-id");
-
-    const response = await fetch(`/api/form/${id}`, {
-      method: "DELETE",
-    });
-
-    if (response.ok) {
-      window.alert('Day deleted!');
-      document.location.replace("/form");
-    } else {
-      alert("Failed to delete day");
+    if (!res.ok) {
+      throw new Error(`Failed to delete day {status: ${res.status}, text: "${res.statusText}"`);
     }
   }
-};
 
-document.querySelector('.add').addEventListener('click', newFormHandler);
-document.querySelector('.edit').addEventListener('click', updateFormHandler);
-document.querySelector('.delete').addEventListener('click', delFormHandler);
-});
+  // new record -- save
+  $(document).on("click", ".save", function () {
+    const day = $day.val();
+    const data = {
+      calorie: $calorie.val(),
+      exercise: $exercise.val(),
+      sleep: $sleep.val(),
+      water: $water.val(),
+    }
 
+    if ($inputs.data("original")) {
+      update(data)
+        .then(() => {
+          data["day"] = day;
+          insert(data);
+          reset();
+        }).catch(err => {
+          alert(err);
+        })
+    } else {
+      data["day"] = day;
+      add(data)
+        .then(() => {
+          insert(data);
+          reset();
+        })
+        .catch(err => {
+          alert(err);
+        })
+    }
+  });
+
+  // new record -- cancel
+  $(document).on("click", ".cancel", function () {
+    reset();
+    const original = $inputs.data("original");
+    console.log(original);
+
+    if (original) {
+      insert(original);
+      $inputs.removeData();
+    }
+  });
+
+  // existing record -- edit
+  $(document).on("click", ".edit", function () {
+    if ($inputs.data("original")) {
+      return;
+    }
+
+    const $tr = $(this).closest("tr");
+    const $td = $tr.children();
+    const original = {
+      day: $td.eq(0).text(),
+      calorie: $td.eq(1).text(),
+      exercise: $td.eq(2).text(),
+      sleep: $td.eq(3).text(),
+      water: $td.eq(4).text(),
+    };
+
+    $tr.before($inputs);
+    $tr.remove()
+
+    $inputs.data("original", original);
+    $day.val(original.day);
+    $calorie.val(original.calorie);
+    $exercise.val(original.exercise);
+    $sleep.val(original.sleep);
+    $water.val(original.water);
+
+    $calorie.focus();
+  });
+
+  // existing record -- delete
+  $(document).on("click", ".delete", function () {
+    var $tr = $(this).parents("tr");
+    del($tr)
+      .then(() => {
+        $tr.remove();
+      })
+      .catch(err => {
+        alert(err);
+      })
+  });
+})
