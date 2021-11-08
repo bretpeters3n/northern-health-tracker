@@ -33,8 +33,3 @@ $('.tab-1').click(tabOne);
 $('.tab-2').click(tabTwo);
 $('.tab-3').click(tabThree);
 $('.tab-4').click(tabFour);
-
-
-
-
-// $('.contact-button').click(contactClasses);

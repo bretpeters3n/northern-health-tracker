@@ -60,7 +60,9 @@ Essenitially, users will use this site to input weekly health data. The weekly h
 - Heroku Deployment
 - Chart.js
 
+## Test
 
+No testing has been set up yet. 
 
 ## Contribution
 Contributions are accepted. Feel free to fork without permission.
