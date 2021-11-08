@@ -13,7 +13,7 @@
         <div class="d-flex">
           <nav class='tab-sections'>
             <ul>
-              <li class="tabs tab-1">Steps</li>
+              <li class="tabs tab-1">Exercise</li>
               <li class="tabs tab-2">Water</li>
               <li class="tabs tab-3">Sleep</li>
               <li class="tabs tab-4">Calorie</li>
@@ -25,21 +25,204 @@
 
 {{!-- -------------chart.js-------------- --}}
 <div style="margin: auto; height:375px; width:400px">
-        <canvas id="myChart" width="600" height="385"></canvas>
+        <canvas id="myChart-calorie" width="600" height="385"></canvas>
 </div>
-{{weeklyCalorieAvgs.allUserCalories}}
-{{weeklyCalorieAvgs.thisUserCalories}}
+<script>
+const ctx_calorie = document.getElementById("myChart-calorie").getContext("2d");
+
+const myLineChart_calorie = new Chart(ctx_calorie, {
+  type: "bar",
+  data: {
+    labels: ["Average Daily Calories"],
+    datasets: [
+      {
+        label: "You",
+        data: [{{allAverages.userCalories}}],
+        backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+        borderColor: ["rgba(255, 99, 132, 1)"],
+        borderWidth: 1,
+      },
+      {
+        label: "Everone",
+        data: [{{allAverages.allUserCalories}}],
+        backgroundColor: ["rgba(54, 162, 235, 0.2)"],
+        borderColor: ["rgba(54, 162, 235, 1)"],
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    scales: {
+      yAxes: [
+        {
+          display: true,
+          ticks: {
+            suggestedMin: 0, // minimum will be 0, unless there is a lower value.
+            suggestedMax: 3000, // minimum will be 0, unless there is a lower value.
+            // OR //
+            beginAtZero: true, // minimum value will be 0.
+          },
+        },
+      ],
+    },
+  },
+});
+</script>
 {{!-- -------------chart.js-------------- --}}
 
       </div>
           <div class="water-graph hidden">
             Water Graph
+
+{{!-- -------------chart.js-------------- --}}
+<div style="margin: auto; height:375px; width:400px">
+        <canvas id="myChart-water" width="600" height="385"></canvas>
+</div>   
+<script>
+const ctx_water = document.getElementById("myChart-water").getContext("2d");
+
+const myLineChart_water = new Chart(ctx_water, {
+  type: "bar",
+  data: {
+    labels: ["Average Daily Water (glasses)"],
+    datasets: [
+      {
+        label: "You",
+        data: [{{allAverages.userWater}}],
+        backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+        borderColor: ["rgba(255, 99, 132, 1)"],
+        borderWidth: 1,
+      },
+      {
+        label: "Everone",
+        data: [{{allAverages.allUserWater}}],
+        backgroundColor: ["rgba(54, 162, 235, 0.2)"],
+        borderColor: ["rgba(54, 162, 235, 1)"],
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    scales: {
+      yAxes: [
+        {
+          display: true,
+          ticks: {
+            suggestedMin: 0, // minimum will be 0, unless there is a lower value.
+            suggestedMax: 20, // minimum will be 0, unless there is a lower value.
+            // OR //
+            beginAtZero: true, // minimum value will be 0.
+          },
+        },
+      ],
+    },
+  },
+});
+</script>       
+{{!-- -------------chart.js-------------- --}}
+
           </div>
           <div class="sleep-graph hidden">
             Sleep Graph
+
+{{!-- -------------chart.js-------------- --}}
+<div style="margin: auto; height:375px; width:400px">
+        <canvas id="myChart-sleep" width="600" height="385"></canvas>
+</div>
+<script>
+const ctx_sleep = document.getElementById("myChart-sleep").getContext("2d");
+
+const myLineChart_sleep = new Chart(ctx_sleep, {
+  type: "bar",
+  data: {
+    labels: ["Average Daily Sleep (hours)"],
+    datasets: [
+      {
+        label: "You",
+        data: [{{allAverages.userSleep}}],
+        backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+        borderColor: ["rgba(255, 99, 132, 1)"],
+        borderWidth: 1,
+      },
+      {
+        label: "Everone",
+        data: [{{allAverages.allUserSleep}}],
+        backgroundColor: ["rgba(54, 162, 235, 0.2)"],
+        borderColor: ["rgba(54, 162, 235, 1)"],
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    scales: {
+      yAxes: [
+        {
+          display: true,
+          ticks: {
+            suggestedMin: 0, // minimum will be 0, unless there is a lower value.
+            suggestedMax: 12, // minimum will be 0, unless there is a lower value.
+            // OR //
+            beginAtZero: true, // minimum value will be 0.
+          },
+        },
+      ],
+    },
+  },
+});
+</script>          
+{{!-- -------------chart.js-------------- --}}
+
           </div>
           <div class="steps-graph hidden">
-            Steps Graph
+            Exercise Graph
+
+{{!-- -------------chart.js-------------- --}}
+<div style="margin: auto; height:375px; width:400px">
+        <canvas id="myChart-steps" width="600" height="385"></canvas>
+</div>    
+<script>
+const ctx_steps = document.getElementById("myChart-steps").getContext("2d");
+
+const myLineChart_steps = new Chart(ctx_steps, {
+  type: "bar",
+  data: {
+    labels: ["Average Daily Exercise (minutes)"],
+    datasets: [
+      {
+        label: "You",
+        data: [{{allAverages.userExercise}}],
+        backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+        borderColor: ["rgba(255, 99, 132, 1)"],
+        borderWidth: 1,
+      },
+      {
+        label: "Everone",
+        data: [{{allAverages.allUserExercise}}],
+        backgroundColor: ["rgba(54, 162, 235, 0.2)"],
+        borderColor: ["rgba(54, 162, 235, 1)"],
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    scales: {
+      yAxes: [
+        {
+          display: true,
+          ticks: {
+            suggestedMin: 0, // minimum will be 0, unless there is a lower value.
+            suggestedMax: 60, // minimum will be 0, unless there is a lower value.
+            // OR //
+            beginAtZero: true, // minimum value will be 0.
+          },
+        },
+      ],
+    },
+  },
+});
+</script>      
+{{!-- -------------chart.js-------------- --}}
+
           </div>
         </div>
         </div>
