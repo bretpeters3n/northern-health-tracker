@@ -35,15 +35,6 @@ $('.tab-3').click(tabThree);
 $('.tab-4').click(tabFour);
 
 
-//////////////////////////// Sign Up ////////////////////////////////
-  $("#signup").click(function () {
-  $(".pinkbox").css("transform", "translateX(80%)");
-  $(".signin").addClass("nodisplay");
-  $(".signup").removeClass("nodisplay");
-});
 
-$("#signin").click(function () {
-  $(".pinkbox").css("transform", "translateX(0%)");
-  $(".signup").addClass("nodisplay");
-  $(".signin").removeClass("nodisplay");
-});
+
+// $('.contact-button').click(contactClasses);
