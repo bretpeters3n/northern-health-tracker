@@ -42,7 +42,7 @@ router.get("/averages", (req, res) => {
   res.render("averages", { logged_in: req.session.logged_in });
 });
 
-router.get("/contact", (req, res) => {
+router.get("/contact", withAuth, (req, res) => {
   res.render("contactpage", { logged_in: req.session.logged_in });
 });
 

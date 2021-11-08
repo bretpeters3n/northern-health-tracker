@@ -15,7 +15,7 @@ $(document).ready(function () {
   function insert(data) {
     const row = `
   <tr>
-    <td>${data.day}</td>
+    <td>${isoDate(data.day)}</td>
     <td>${data.calorie}</td>
     <td>${data.exercise}</td>
     <td>${data.sleep}</td>
@@ -26,14 +26,18 @@ $(document).ready(function () {
     </td>
   </tr>`;
 
+    let inserted = false;
+
     $("tbody > tr:not(:last)").each(function () {
       if (data.day < $(this).children().first().text()) {
         $(this).before(row);
-        return;
+        inserted = true;
+        return false;
       }
     })
-
-    $("tbody > tr:last").before(row);
+    if(!inserted) {
+      $("tbody > tr:last").before(row);
+    }
   }
 
   function reset() {
@@ -61,18 +65,21 @@ $(document).ready(function () {
     });
 
     if (!res.ok) {
-      throw new Error(`Failed to add day {status: ${res.status}, text: "${res.statusText}"`);
+      const err = await res.json();
+      throw err.message;
     }
   }
 
   async function update(data) {
-    const res = await fetch(`/api/form/${isoDate($day.val())}`, {
+    const date = isoDate($day.val());
+    const content = JSON.stringify(data);
+    const options = {
       method: "PUT",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+      body: content,
+      headers: {"Content-Type": "application/json"},
+    };
+    const res = await fetch(`/api/form/${date}`, options);
+    console.log("After fetch");
 
     if (!res.ok) {
       throw new Error(`Failed to update day {status: ${res.status}, text: "${res.statusText}"`);
@@ -122,14 +129,14 @@ $(document).ready(function () {
 
   // new record -- cancel
   $(document).on("click", ".cancel", function () {
-    reset();
     const original = $inputs.data("original");
     console.log(original);
-
+    
     if (original) {
       insert(original);
       $inputs.removeData();
     }
+    reset();
   });
 
   // existing record -- edit

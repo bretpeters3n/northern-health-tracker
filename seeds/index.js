@@ -16,6 +16,8 @@ const seedAll = async () => {
   console.log("\n----- LOGS SEEDED -----\n");
 
   await seedContact();
+  console.log("\n----- CONTACT SEEDED -----\n");
+  
   process.exit(0);
 };
 

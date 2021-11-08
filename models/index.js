@@ -8,4 +8,8 @@ Logs.belongsTo(User, {
   foreignKey: "user_id",
 })
 
+Contact.belongsTo(User, {
+  foreignKey: "user_id",
+})
+
 module.exports = { User, Logs, Contact };
