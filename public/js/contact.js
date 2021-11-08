@@ -1,11 +1,10 @@
 const contact = async () => {
-  const email = document.querySelector('#email').value.trim();
   const message = document.querySelector('#message').value.trim();
 
-  if (email && message) {
+  if (message) {
     const response = await fetch("/api/contact", {
       method: "POST",
-      body: JSON.stringify({ email, message }),
+      body: JSON.stringify({ message: message }),
       headers: { "Content-Type": "application/json" },
     });
 

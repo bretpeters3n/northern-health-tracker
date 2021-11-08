@@ -38,15 +38,15 @@
                 </td>
               </tr>
               {{/each}}
-              <tr>
+              <tr class="inputs">
                 <td><input class="form-input form-control" type="date" id="day" title="Day of"></td>
                 <td><input class="form-input form-control" type="number" id="calorie"title="Calorie Intake"></td>
                 <td><input class="form-input form-control" type="number" id="exercise" title="Steps Taken"></td>
                 <td><input class="form-input form-control" type="number" id="sleep" title="Hours of sleep the night before"></td>
                 <td><input class="form-input form-control" type="number" id="water" title="Glasses of water drank"></td>
                 <td>
-                    <a class="save" title="Save" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                    <a class="cancel" title="Cancel" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                    <a class="save" title="Save" data-toggle="tooltip"><i class="material-icons">&#xe145;</i></a>
+                    <a class="cancel" title="Cancel" data-toggle="tooltip"><i class="material-icons">&#xe5c9;</i></a>
                 </td>
               </tr>  
             </tbody>
@@ -55,7 +55,6 @@
         </div>
       </div>
     </section>
-    <input type="text" id="logs" value="{{logs}}" hidden>
       <script src="/js/form.js"></script> 
   </body>
 </html>
