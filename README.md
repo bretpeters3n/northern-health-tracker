@@ -42,7 +42,8 @@ A Fitness Tracker project is a application that allows that user to track their 
 
 
 ## Preview
-![Preview](/images/screenshot.png)
+![image](https://user-images.githubusercontent.com/90201012/140740772-f28735b1-bb14-49f3-99c7-179e1d5f75b6.png)
+
 
 
 ## Features
@@ -57,15 +58,18 @@ A Fitness Tracker project is a application that allows that user to track their 
 
 ## Installation
 
+Feel free to pull this project into your code. 
 
 
 ## Usage
+
+Essenitially, users will use this site to input weekly health data. The weekly health data includes details about your steps, calories consumed, water intake, and the amount of sleep one has. Once this data is entered, the data is then converted into graphical data for the user to look at. It comparaes the habits of the user to that of the average person. 
 
 
 
 ## Test
 
-
+No testing has been set up yet. 
 
 ## Contribution
 Contributions are accepted. Feel free to fork without permission.

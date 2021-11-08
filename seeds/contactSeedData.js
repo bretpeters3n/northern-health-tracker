@@ -2,24 +2,17 @@ const { Contact } = require("../models");
 
 const ContactData = [
   {
-    fullName: "Sam Smith",
-    email: "bretpetersen82@gmail.com",
-    Number: 612123123,
-    Message:'fnsdfhskfhkshf',
+    user_id: 1,
+    message: "The first message",
   },
   {
-    fullName: "Sam Smith",
-    email: "bretpetersen82@gmail.com",
-    Number: 612123123,
-    Message:'fnsdfhskfhkshf',
+    user_id: 2,
+    message: "Number 2",
   },
   {
-    fullName: "Sam Smith",
-    email: "bretpetersen82@gmail.com",
-    Number: 612123123,
-    Message:'fnsdfhskfhkshf',
+    user_id: 3,
+    message: "Try a third time",
   },
-  
 ];
 
 const seedContact = () => Contact.bulkCreate(ContactData);

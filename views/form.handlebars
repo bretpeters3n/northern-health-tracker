@@ -21,19 +21,32 @@
                 <th>Exercise</th>
                 <th>Sleep</th>
                 <th>Water</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
+              {{#each logs}}
               <tr>
-                <td><input class="form-input form-control" type="date" id="day"></td>
-                <td><input class="form-input form-control" type="text" id="calorie"></td>
-                <td><input class="form-input form-control" type="text" id="exercise"></td>
-                <td><input class="form-input form-control" type="text" id="sleep"></td>
-                <td><input class="form-input form-control" type="text" id="water"></td>
+                <td>{{day}}</td>
+                <td>{{calorie}}</td>
+                <td>{{exercise}}</td>
+                <td>{{sleep}}</td>
+                <td>{{water}}</td>
                 <td>
-                    <a class="add" id="save" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                    <a class="edit" id="update" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                    <a class="delete" id="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                  <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                  <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                </td>
+              </tr>
+              {{/each}}
+              <tr class="inputs">
+                <td><input class="form-input form-control" type="date" id="day" title="Day of"></td>
+                <td><input class="form-input form-control" type="number" id="calorie"title="Calorie Intake"></td>
+                <td><input class="form-input form-control" type="number" id="exercise" title="Steps Taken"></td>
+                <td><input class="form-input form-control" type="number" id="sleep" title="Hours of sleep the night before"></td>
+                <td><input class="form-input form-control" type="number" id="water" title="Glasses of water drank"></td>
+                <td>
+                    <a class="save" title="Save" data-toggle="tooltip"><i class="material-icons">&#xe145;</i></a>
+                    <a class="cancel" title="Cancel" data-toggle="tooltip"><i class="material-icons">&#xe5c9;</i></a>
                 </td>
               </tr>  
             </tbody>
@@ -42,7 +55,6 @@
         </div>
       </div>
     </section>
-    <input type="text" id="logs" value="{{logs}}" hidden>
       <script src="/js/form.js"></script> 
   </body>
 </html>

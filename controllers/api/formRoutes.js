@@ -2,60 +2,58 @@ const router = require('express').Router();
 const { Logs } = require('../../models');
 
 
-
-router.get("/:id", async (req, res) => {
-    try {
-        const userData = await Logs.findByPk(req.params.id);
-        res.status(200).json(userData);
-    } catch (err) {
-        res.status(404).json(err);
-    }
-});
-
-router.post("/", async (req, res) => {
-    console.log("ASJDIASJDIOSAJDIOPASJIDOPAJSIOD",req.body);
-    const newLog = {...req.body, 
-    user_id: req.session.user_id,
-    }
-
-    try {
-        const userData = await Logs.create(newLog);
-        console.log(newLog);
-        /* console.log(userData, req.body); */
-        res.status(201).json(userData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
-router.put("/:id", (req, res) => {
-    Logs.update(req.body, {
-        where: {
-            id: req.params.id
+router.post("/", (req, res) => {
+    Logs.create({
+        user_id: req.session.user_id,
+        ...req.body, 
+    }).then(created => {
+        console.info("created", created.dataValues);
+        res.status(200).json(created.dataValues);
+    }).catch(err => {
+        if(err.message.startsWith("Incorrect")) {
+            res.status(400).json({message: err.message});
+        } else if (err.original.code === "ER_DUP_ENTRY") {
+            res.status(409).json({message: `Duplicate day "${req.body.day}"`});
+        } else {
+            res.status(500).json({message: err.message});
         }
     })
-        .then(updated => res.json(updated))
-        .catch(err => res.json(err))
 });
 
-router.delete("/:id", async (req, res) => {
-    try {
-        const userData = await Logs.destroy({
-            where: {
-                id: req.params.id
-            }
-        });
-
-        if (!userData) {
-            res.status(404).json({ message: 'No record found with this id!' });
+router.put("/:day", (req, res) => {
+    Logs.update(req.body, {
+        where: {
+            user_id: req.session.user_id,
+            day: req.params.day,
+        }
+    }).then(updated => {
+        console.info("updated", updated[0]);
+        if (updated[0]===0) {
+            res.sendStatus(404);
             return;
         }
-
-        res.status(200).json(userData);
-    } catch (err) {
+        res.sendStatus(204);
+    }).catch(err => {
         res.status(500).json(err);
-    }
+    })
 });
 
+router.delete("/:day", (req, res) => {
+    Logs.destroy({
+        where: {
+            user_id: req.session.user_id,
+            day: req.params.day,
+        }
+    }).then(deleted => {
+        console.info("deleted", deleted);
+        if (deleted === 0) {
+            res.sendStatus(404);
+            return;
+        }
+        res.sendStatus(204);
+    }).catch((err) => {
+        res.status(500).json(err);
+    })
+});
 
 module.exports = router;

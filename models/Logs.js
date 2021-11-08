@@ -1,27 +1,22 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Logs extends Model {}
+class Logs extends Model { }
 
 Logs.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
     user_id: {
       type: DataTypes.INTEGER,
+      primaryKey: true,
       references: {
         model: "user",
         key: "id",
       },
     },
     day: {
-        type: DataTypes.DATE,
-        allowNull: false,
-      },
+      type: DataTypes.DATEONLY,
+      primaryKey: true,
+    },
     calorie: {
       type: DataTypes.INTEGER,
       allowNull: true,

@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "live": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -29,5 +30,8 @@
     "express-session": "^1.17.2",
     "mysql2": "^2.3.2",
     "sequelize": "^6.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
   }
 }

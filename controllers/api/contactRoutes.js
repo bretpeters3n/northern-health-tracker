@@ -1,13 +1,17 @@
 const router = require("express").Router();
-const { Contact } = require("../../models");
+const { Contact, User } = require("../../models");
 
 router.post("/", async (req, res) => {
   try {
-      const userData = await Contact.create(req.body);
-      console.log(userData, req.body);
-      res.status(201).json(userData);
+    const message = await Contact.create({
+      user_id: req.session.user_id,
+      message: req.body.message,
+    });
+
+    console.log(message, req.body);
+    res.sendStatus(201);
   } catch (err) {
-      res.status(500).json(err);
+    res.status(500).json(err);
   }
 });
 
