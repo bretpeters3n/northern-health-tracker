@@ -1,14 +1,17 @@
-<div class="d-flex flex-column justify-content-center h-50">
+<section class="header-section">
+  <div>Login/Sign Up</div>
+</section>
+<div class="login-margins">
+<section class="main-container login-section">
+<div class=" d-flex flex-column justify-content-center h-50">
   <div class="d-flex flex-row justify-content-center">
     <div class="col-md-6">
       <h2 class="text-center">Login</h2>
-
       <form class="login-form">
         <div class="form-group">
           <label for="email-login">email:</label>
           <input class="form-input" type="text" id="email-login" />
-        </div>
-        <div class="form-group">
+       
           <label for="password-login">password:</label>
           <input class="form-input" type="password" id="password-login" />
         </div>
@@ -17,19 +20,22 @@
         </div>
       </form>
     </div>
-  </div>
+    <div>
+    <button class="login-button main-container btn btn-primary">Sign Up</button>
+    </div>
+    </div>
+  </section>
 
-  <div class="d-flex flex-row justify-content-center">
-    <div class="col-md-6">
+
+  <section class="main-container signup-section hidden">
+    <div class="d-flex flex-row justify-content-center">
+    <div class="login-background col-md-6">
       <h2 class="text-center">Signup</h2>
-
       <form class="signup-form">
         <div class="form-group">
-          <label for="email-signup">email:</label>
-          <input class="form-input" type="text" id="email-signup" />
-        </div>
-        <div class="form-group">
-          <label for="password-signup">password:</label>
+          <label for="email-signup">Email:</label>
+          <input class="form-input" type="text" id="email-signup"/>
+          <label for="password-signup">Password:</label>
           <input class="form-input" type="password" id="password-signup" />
         </div>
         <div class="form-group">
@@ -38,6 +44,11 @@
       </form>
     </div>
   </div>
+      <div>
+    <button class="signup-button main-container btn btn-primary">Switch</button>
+    </div>
+  </div>
+</section>
 </div>
 
 <script src="/js/login.js"></script>

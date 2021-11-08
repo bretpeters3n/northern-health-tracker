@@ -36,14 +36,19 @@ $('.tab-4').click(tabFour);
 
 
 //////////////////////////// Sign Up ////////////////////////////////
-  $("#signup").click(function () {
-  $(".pinkbox").css("transform", "translateX(80%)");
-  $(".signin").addClass("nodisplay");
-  $(".signup").removeClass("nodisplay");
-});
+function signup () {
+  $(".login-section").addClass("hidden");
+  $(".signup-section ").removeClass("hidden");
+}
 
-$("#signin").click(function () {
-  $(".pinkbox").css("transform", "translateX(0%)");
-  $(".signup").addClass("nodisplay");
-  $(".signin").removeClass("nodisplay");
-});
+function login () {
+  $(".login-section").removeClass("hidden");
+  $(".signup-section ").removeClass("hidden");
+
+}
+
+$('.signup-button').click(login);
+$('.login-button').click(signup);
+$('.tab-3').click(tabThree);
+$('.tab-4').click(tabFour);
+
