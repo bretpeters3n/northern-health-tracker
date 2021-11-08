@@ -46,6 +46,7 @@ router.get("/contact", withAuth, (req, res) => {
   res.render("contactpage", { logged_in: req.session.logged_in });
 });
 
+
 router.get("/profile", async (req, res) => {
   if (req.session.logged_in) {
     const userId = req.session.user_id;
