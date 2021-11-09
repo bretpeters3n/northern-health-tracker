@@ -4,7 +4,7 @@ function tabOne() {
   $('.steps-graph').removeClass('hidden');
   $('.water-graph').addClass('hidden');
   $('.sleep-graph').addClass('hidden');
-  $('.calorie-graph').addClass('active');
+  $('.calorie-graph').addClass('hidden');
 }
 
 function tabTwo() {
