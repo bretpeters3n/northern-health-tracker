@@ -33,22 +33,3 @@ $('.tab-1').click(tabOne);
 $('.tab-2').click(tabTwo);
 $('.tab-3').click(tabThree);
 $('.tab-4').click(tabFour);
-
-
-//////////////////////////// Sign Up ////////////////////////////////
-function signup () {
-  $(".login-section").addClass("hidden");
-  $(".signup-section ").removeClass("hidden");
-}
-
-function login () {
-  $(".login-section").removeClass("hidden");
-  $(".signup-section ").removeClass("hidden");
-
-}
-
-$('.signup-button').click(login);
-$('.login-button').click(signup);
-$('.tab-3').click(tabThree);
-$('.tab-4').click(tabFour);
-

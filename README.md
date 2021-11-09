@@ -21,6 +21,7 @@
 
 ## Overview
 A Fitness Tracker project is a application that allows that user to track their progress on their choosen weekly workout and guides users set goals for a healtheir life style.  
+Essenitially, users will use this site to input weekly health data. The weekly health data includes details about your steps, calories consumed, water intake, and the amount of sleep one has. Once this data is entered, the data is then converted into graphical data for the user to look at. It comparaes the habits of the user to that of the average person. 
 
 
 
@@ -28,44 +29,36 @@ A Fitness Tracker project is a application that allows that user to track their 
 - [Overview](#overview)
 - [Authors](#authors)
 - [Preview](#preview)
+- [Demo](#demo)
 - [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Test](#test)
 - [Contribution](#contribution)
 - [License](#license)
 - [Bugs](#bugs)
 
 
 ## Authors
-- Sophia: [soph-k](https://github.com/soph-k)
+- Sophia Kiani: [soph-k](https://github.com/soph-k)
+- Cole Enyart: [ColeEnyart](https://github.com/ColeEnyart)
+- Bret Peterson: [bretpeters3n](https://github.com/bretpeters3n)
+- Bentura Peralez: [BenturaPeralez](https://github.com/BenturaPeralez)
 
 
 ## Preview
-![image](https://user-images.githubusercontent.com/90201012/140740772-f28735b1-bb14-49f3-99c7-179e1d5f75b6.png)
+![image](./public/images/screenshot.png)
 
-
+## Demo
+[Demo](https://northern-health-tracker1.herokuapp.com/)
 
 ## Features
 - HTML
 - CSS
-  - Bulma
+  - Bootstrap
 - Javascript
   - jQuery
 - Node.js 
 - SQL
-
-
-## Installation
-
-Feel free to pull this project into your code. 
-
-
-## Usage
-
-Essenitially, users will use this site to input weekly health data. The weekly health data includes details about your steps, calories consumed, water intake, and the amount of sleep one has. Once this data is entered, the data is then converted into graphical data for the user to look at. It comparaes the habits of the user to that of the average person. 
-
-
+- Heroku Deployment
+- Chart.js
 
 ## Test
 
@@ -79,10 +72,9 @@ Contributions are accepted. Feel free to fork without permission.
 This project is under the MIT license.
 
 
-###
-For questions about this project, please review  GitHub repo at [soph-k](https://github.com/soph-k/norther-fitness-tracker) or contact one of the authors on Github.
+### Questions
+For questions about this project, please review  GitHub repo at [Northern Health Tracker](https://github.com/soph-k/norther-fitness-tracker) or contact one of the authors on Github.
 
 
 #### Bugs 
 No known bugs.
-
