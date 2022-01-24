@@ -3,8 +3,8 @@
 ![license](https://img.shields.io/badge/license-MIT-red)
 
 <p align="center">
-    <img src="https://img.shields.io/github/repo-size/soph-k/fitness-tracker"/>
-    <img src="https://img.shields.io/github/last-commit/soph-k/fitness-tracker"/>
+    <img src="https://img.shields.io/github/repo-size/bretpeters3n/northern-health-tracker"/>
+    <img src="https://img.shields.io/github/last-commit/bretpeters3n/northern-health-tracker"/>
 </p>
 <p align="center">
     <img src="https://img.shields.io/badge/HTML-yellow"/>
@@ -60,6 +60,35 @@ Essenitially, users will use this site to input weekly health data. The weekly h
 - SQL
 - Heroku Deployment
 - Chart.js
+
+<!-- GETTING STARTED -->
+## Getting Started
+These are instructions on setting up this project locally on your machine. To get a local copy up and running follow these simple example steps.
+
+
+### Prerequisites
+Make sure you have the latest installation of NPM (Node Package Manager) by following this step.
+* Install/update NPM
+   ```sh
+   npm install npm@latest -g
+   ```
+
+
+### Installation
+1. Clone the repo
+   ```sh
+   git clone https://github.com/bretpeters3n/northern-health-tracker.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Run project
+   ```sh
+   npm run start
+   ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Test
 
