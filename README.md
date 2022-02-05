@@ -29,6 +29,7 @@ Essenitially, users will use this site to input weekly health data. The weekly h
 - [Authors](#authors)
 - [Preview](#preview)
 - [Demo](#demo)
+- [Guest Login](#guest-login)
 - [Features](#features)
 - [Contribution](#contribution)
 - [License](#license)
@@ -48,6 +49,14 @@ Essenitially, users will use this site to input weekly health data. The weekly h
 ## Demo
 
 [Demo](https://northern-health-tracker2.herokuapp.com/)
+
+## Guest Login
+
+Username / Email:
+email@email.com
+
+Password:
+Test1234!
 
 ## Features
 
